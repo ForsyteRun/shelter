@@ -1,0 +1,3 @@
+.wrapper-background {
+  @include backgroundImage("./../images/start-screen-gradient-background.png", cover, center);
+}

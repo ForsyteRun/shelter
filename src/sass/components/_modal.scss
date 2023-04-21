@@ -1,0 +1,162 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include flex(row, center, center);
+  background: $background-modal;
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+  &__body {
+    max-width: 900px;
+    height: 500px;
+    @include flex(row, space-between, center);
+    position: relative;
+    background: $color-light-s;
+    border-radius: 9px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: all 0.4s ease;
+    @media (max-width: $sub-dekstop) {
+      justify-content: flex-start;
+      max-width: max(630px, 70.3vw);
+      height: max(350px, 39.46vw);
+      column-gap: 13px;
+    }
+    @media (max-width: $burger) {
+      max-width: max(520px, 82.13vw);
+      column-gap: max(0, 1.7vw);
+    }
+    @media (max-width: $middle) {
+      max-width: max(240px, 60.78vw);
+    }
+    @media (max-width: $mobileL) {
+      height: max(341px, 39.46vw); //TODO: dont work
+    }
+  }
+  &__discription {
+    flex-basis: 41.3%;
+    height: 397px;
+    @media (max-width: $sub-dekstop) {
+      flex-basis: 45%;
+      height: clamp(330px, 37vw, 397px);
+    }
+    @media (max-width: $burger) {
+      flex-basis: 80%;
+      @include flex(column, space-between, flex-start);
+      margin: 0 auto;
+    }
+    @media (max-width: $middle) {
+      align-items: center;
+    }
+    @media (max-width: $mobileL) {
+      flex-basis: 100%;
+      height: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: initial;
+      padding-top: 5px;
+    }
+  }
+  &__title {
+    color: $color-black;
+    margin-bottom: 8px;
+    @media (max-width: $mobileL) {
+      font-size: 3.5rem;
+      padding-left: 4px;
+      margin-bottom: 5px;
+    }
+  }
+  &__type {
+    margin-bottom: 40px;
+    @media (max-width: $sub-dekstop) {
+      margin-bottom: max(18px, 2.98vw);
+    }
+  }
+  &__text {
+    padding-right: 20px;
+    margin-bottom: 42px;
+    @media (max-width: $sub-dekstop) {
+      font-size: max(1.3rem, 1.171vw);
+      line-height: 1.07;
+      margin-bottom: max(18px, 2.2vw);
+      padding-right: 10px;
+    }
+    @media (max-width: $mobileL) {
+      text-align: justify;
+      padding: 0 10px;
+    }
+  }
+  &__list {
+    list-style: disc;
+    color: $color-primary;
+    @media (max-width: $mobileL) {
+      align-self: flex-start;
+      padding-left: 10.5px;
+    }
+  }
+  &__img {
+    width: 55%;
+    height: 100%;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    @media (max-width: $middle) {
+      display: none;
+    }
+  }
+  &__list {
+    margin: 0 0 0 15px;
+  }
+  &__about {
+    margin-bottom: 10px;
+    @media (max-width: $sub-dekstop) {
+      margin-bottom: 6px;
+    }
+  }
+  &__point {
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+  &__close {
+    position: absolute;
+    right: -41px;
+    top: -51px;
+    width: 52px;
+    height: 52px;
+    @include flex(row, center, center);
+    border-radius: 50%;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    &:hover {
+      transform: scale(1.2);
+      transition: transform 0.4s ease;
+      .modal__close__svg {
+        transform: rotate(270deg);
+        transition: transform 0.6s ease;
+      }
+    }
+    &__svg {
+      @include backgroundImage("./../images/svg/cross.svg", cover, center);
+      width: 12px;
+      height: 12px;
+    }
+    @media (max-width: $mobileL) {
+      right: -30px;
+      top: -52px;
+    }
+  }
+  &.active {
+    transition: all 1s ease;
+    opacity: 1;
+    visibility: visible;
+    & .modal__body {
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: all 1s ease; //TODO: убрать анимацию перед кросчеком
+    }
+  }
+}

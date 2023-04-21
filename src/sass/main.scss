@@ -1,0 +1,12 @@
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
+
+@import "base/base", "base/normalize", "base/typography";
+
+//Layouts
+@import "layout/header", "layout/not-only", "layout/about", "layout/our_friends", "layout/help", "layout/in_addition",
+  "layout/footer", "layout/wrapper";
+
+//Components
+@import "components/buttons", "components/modal", "components/burger";
+
+@import "pages/main", "pages/pets";

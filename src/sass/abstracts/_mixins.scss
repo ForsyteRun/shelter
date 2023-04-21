@@ -1,0 +1,38 @@
+@mixin flex($dir, $justify, $align) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin fontArial($family: "Arial") {
+  //TODO: remove
+  font-family: $family;
+}
+
+@mixin font($size, $height: normal, $spacing: 0.06em) {
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+@mixin backgroundImage($url, $size, $position) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin button($width, $height, $background, $border-radius, $padding) {
+  width: $width;
+  height: $height;
+  background: $background;
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
+@mixin anima($nimation-name, $animation-duration, $animation-fill-mode: forwards) {
+  animation-name: $nimation-name;
+  animation-duration: $animation-duration;
+  animation-fill-mode: $animation-fill-mode;
+}

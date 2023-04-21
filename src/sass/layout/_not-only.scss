@@ -1,0 +1,94 @@
+.not-only {
+  padding-top: 61px;
+  @include flex(row, space-between, center);
+  @media (max-width: $sub-dekstop) {
+    padding-top: max(35px, 4.5vw);
+  }
+  @media (max-width: $laptop) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  @media (max-width: $mobileL) {
+    padding-top: 31px;
+  }
+  &__left {
+    flex-basis: 39.2%;
+    position: relative;
+    top: -38px;
+    @media (max-width: $laptop) {
+      width: 65%;
+      position: static;
+      align-self: center;
+    }
+    @media (max-width: $burger) {
+      width: 100%;
+    }
+    @media (max-width: $mobileL) {
+      padding: 0 4px;
+    }
+  }
+  &__title {
+    display: inline-block;
+    width: 85%;
+    margin-bottom: 9.4%;
+    @media (max-width: $laptop) {
+      margin-bottom: 9%;
+    }
+    @media (max-width: $burger) {
+      margin-bottom: 1%;
+      font-size: 7.8vw;
+    }
+    @media (max-width: $mobileL) {
+      width: 100%;
+      text-align: center;
+      letter-spacing: 1.43px;
+      margin-bottom: 41px;
+    }
+  }
+  &__subtitle {
+    @media (max-width: $mobileL) {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__text {
+    color: $color-dark-s;
+    margin-bottom: 43px;
+    @media (max-width: $laptop) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: $mobileL) {
+      margin-bottom: 42px;
+    }
+  }
+  &__subtext {
+    @media (max-width: $mobileL) {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__button {
+    @media (max-width: $laptop) {
+      margin: auto;
+    }
+  }
+  &__right {
+    flex-basis: 58.3%;
+    height: 730px;
+    @include backgroundImage("./../images/start-screen-puppy.png", contain, bottom);
+    @media (max-width: $sub-dekstop) {
+      width: auto;
+      height: 48vw;
+    }
+    @media (max-width: $laptop) {
+      flex-basis: initial;
+      width: 74vw;
+      height: 90.3vw;
+    }
+    @media (max-width: $mobileL) {
+      width: 82vw;
+      height: 118.1vw;
+    }
+  }
+}
