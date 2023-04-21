@@ -1,7 +1,7 @@
 .about {
   padding: 80px 0 89px;
   @media (max-width: $tablet) {
-    padding: 80px 0 101px;
+    padding-bottom: 101px;
   }
   @media (max-width: $burger) {
     padding: max(42px, 10.44vw) 0 max(42px, 13.1vw);

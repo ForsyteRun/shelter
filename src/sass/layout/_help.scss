@@ -1,76 +1,60 @@
 .help {
-  .container {
-    padding: 80px 30px 100px;
+  padding: 80px 0 100px;
+  @media (max-width: $burger) {
+    padding: min(80px, 13.2%) 0 min(100px, 12.2%);
+  }
+  &__container {
     @include flex(column, flex-start, center);
-    h3 {
-      text-align: center;
-      margin-bottom: 57px;
-      span {
-        display: block;
-      }
-      @media (max-width: $mobileL) {
-        margin-bottom: 43px;
-      }
-    }
-    @media (max-width: $tablet) {
-      padding: min(82px, 11.2%) 20px min(100px, 6.2%) 21px;
+  }
+  &__title {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 57px;
+    @media (max-width: $sub-dekstop) {
+      width: 50%;
     }
     @media (max-width: $mobileL) {
-      padding: min(82px, 13.2%) 0 min(100px, 6.2%) 0;
+      width: 75%;
+      margin-bottom: 43px;
     }
   }
-  @media (max-width: 1070px) {
-    //TODO
-    height: 781px;
+  &__services {
+    max-width: 1030px;
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    row-gap: 56px;
+    column-gap: 11.6%;
+    @media (max-width: $tablet) {
+      width: 97%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      column-gap: 0;
+    }
+    @media (max-width: $middle) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    @media (max-width: $mobileL) {
+      width: 100%;
+      row-gap: 32px;
+      column-gap: 15px;
+    }
   }
-  @media (min-width: $mobileL) and (max-width: $middle) {
-    //TODO
-    height: 1060px;
-  }
-  @media (max-width: $mobileL) {
-    //TODO
-    height: 744px;
-  }
-}
-
-.help-services {
-  max-width: 1030px;
-  @include flex(row, center, center);
-  flex-wrap: wrap;
-  row-gap: 56px;
-  column-gap: 11.6%;
-  .help-services__item {
-    height: 113px;
+  &__item {
     @include flex(column, space-between, center);
-    @include font(2rem, 1.15, 0.06em);
+    @include font(2rem, 1.15);
+    row-gap: 30px;
     color: $color-dark-l;
     @media (max-width: $mobileL) {
-      height: 85px;
-      @include font(15px, 1.1, 0.06em);
-    }
-    svg {
-      @media (max-width: $mobileL) {
-        width: 50px;
-        height: 50px;
-      }
+      row-gap: 19px;
+      @include font(1.5rem, 1.1);
     }
   }
-  @media (max-width: $tablet) {
-    width: 95%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    column-gap: 0;
-  }
-  @media (max-width: $middle) {
-    width: 95%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    column-gap: 0;
-  }
-  @media (max-width: $mobileL) {
-    width: 100%;
-    row-gap: 32px;
+  &__img {
+    @media (max-width: $mobileL) {
+      width: 50px;
+      height: 50px;
+    }
   }
 }
