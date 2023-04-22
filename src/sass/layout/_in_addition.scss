@@ -1,131 +1,123 @@
 .in-addition {
   background: $backgroundFriend;
-  .container {
-    padding: 80px 0 99px;
-    @include flex(row, space-between, flex-start);
+  padding: 80px 0 102px;
+  @media (max-width: $burger) {
+    padding: max(42px, 10.5vw) 0 max(42px, 12.9vw);
+  }
+  &__container {
+    @include flex(row, flex-start, flex-start);
+    column-gap: 33px;
     @media (max-width: $laptop) {
       @include flex(column-reverse, space-between, center);
       row-gap: 10vw;
     }
-    @media (min-width: $tablet) and (max-width: $laptop) {
-      justify-content: flex-start;
-    }
     @media (max-width: $tablet) {
       row-gap: 58px;
-    }
-    @media (max-width: $burger) {
-      padding: max(42px, 10.5vw) max(10px, 3.11vw) max(42px, 12.9vw);
     }
     @media (max-width: $mobileL) {
       row-gap: 13vw;
     }
-    .in-addition-left {
-      flex-basis: 53.7%;
-      height: 282px;
-      @include backgroundImage("./../images/donation-dog.png", inherit, right);
-      @media (max-width: $laptop) {
-        flex-basis: initial;
-        height: 23vw;
-        width: 65%;
-        background-position: center;
-        background-size: contain;
-      }
-      @media (max-width: $tablet) {
-        height: 34vw;
-        position: static;
-        background-position: top;
-      }
-      @media (max-width: $mobileL) {
-        width: 100%;
-        height: 42vw;
-      }
-    }
   }
-
-  .in-addition-right {
-    flex-basis: 43.9%;
-    height: 65.7%;
-    .in-addition-right__title {
-      margin-bottom: 19px;
-      @media (min-width: $tablet) and (max-width: $laptop) {
-        display: inline-block;
-      }
-      @media (max-width: $burger) {
-        font-size: max(25px, 4vw); //TODO
-      }
-      @media (max-width: $mobileL) {
-        text-align: center;
-        margin-bottom: 23px;
-      }
-      span {
-        display: block;
-      }
-    }
-    .in-addition-right__subtitle {
-      font-family: Georgia; //TODO
-      @include font(1.5rem, 1.1, 0.06em);
-      color: $color-dark-l;
-      margin-bottom: 20px;
-      @media (max-width: $laptop) {
-        letter-spacing: 0.058em;
-      }
-      @media (max-width: $mobileL) {
-        margin-bottom: 24px;
-        letter-spacing: initial;
-        text-align: center;
-      }
-    }
-    .in-addition-right__card {
-      @include flex(row, left, center);
-      width: 349px;
-      height: 43px;
-      background: $color-primary;
-      border-radius: 9px;
-      @include font(2rem, 1.15, 0.06em);
-      color: $color-dark-l;
-      padding: 10px 15px;
-      margin-bottom: 21px;
-      cursor: pointer;
-      svg {
-        margin-right: 14px;
-      }
-      a {
-        color: $color-dark-l;
-        @media (max-width: $mobileL) {
-          font-size: max(14.4px, 4.5vw);
-        }
-      }
-      @media (max-width: $mobileL) {
-        width: 100%;
-      }
-    }
-    .in-addition-right__sub-content {
-      width: 65%;
-      @include fontArial;
-      font-style: italic;
-      @include font(1.2rem, 1.5);
-      color: $color-dark-m;
-      @media (max-width: $mobileL) {
-        width: 100%;
-        text-align: justify;
-      }
-    }
+  &__left {
+    flex-basis: 53.7%;
+    height: 282px;
+    @include backgroundImage("./../images/donation-dog.png", inherit, right);
     @media (max-width: $laptop) {
-      width: 75%;
-      align-self: flex-end;
-      padding-left: 2px;
+      flex-basis: initial;
+      height: 34vw;
+      width: 65%;
+      background-position: center;
+      background-size: contain;
     }
-    @media (min-width: $tablet) and (max-width: $laptop) {
-      flex-basis: 33%;
-    }
-    @media (max-width: $middle) {
-      width: 85%;
-      align-self: center;
+    @media (max-width: $tablet) {
+      width: 70%;
+      background-position: bottom;
     }
     @media (max-width: $mobileL) {
+      width: 100%;
+      height: 42vw;
+    }
+  }
+  &__right {
+    flex-basis: 30%;
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      width: 65%;
+    }
+    @media (max-width: $tablet) {
+      width: 54%;
+    }
+    @media (max-width: $burger) {
+      width: 85%;
+    }
+    @media (max-width: $mobileL) {
+      width: 100%;
       padding-left: 10px;
       padding-right: 10px;
+    }
+  }
+  &__title {
+    margin-bottom: 19px;
+    padding-right: 50px;
+    @media (max-width: $tablet) {
+      padding-right: 80px;
+    }
+    @media (max-width: $burger) {
+      font-size: max(2.5rem, 4.55vw);
+    }
+    @media (max-width: $mobileL) {
+      text-align: center;
+      margin-bottom: 23px;
+      padding: 0 35px;
+    }
+  }
+  &__subtitle {
+    @include font(1.5rem, 1.1);
+    color: $color-dark-l;
+    margin-bottom: 20px;
+    @media (max-width: $mobileL) {
+      margin-bottom: 24px;
+      letter-spacing: normal;
+      text-align: center;
+    }
+  }
+  &__card {
+    @include flex(row, space-between, center);
+    @include font(2rem, 1.15);
+    width: 349px;
+    height: 43px;
+    background: $color-primary;
+    border-radius: 9px;
+    color: $color-dark-l;
+    margin-bottom: 21px;
+    padding: 10px 15px;
+    cursor: pointer;
+    @media (max-width: $burger) {
+      justify-content: space-around;
+    }
+    @media (max-width: $mobileL) {
       width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &__link {
+    color: $color-dark-l;
+    @media (max-width: $mobileL) {
+      font-size: max(1.44rem, 4.5vw);
+    }
+  }
+  &__svg {
+    @include backgroundImage("./../images/svg/credit-card.svg", contain, center);
+    width: 30px;
+    height: 23px;
+  }
+  &__content {
+    @include fontArial;
+    @include font(1.2rem, 1.5, normal);
+    font-style: italic;
+    color: $color-dark-m;
+    @media (max-width: $mobileL) {
+      width: 100%;
+      text-align: justify;
     }
   }
 }
