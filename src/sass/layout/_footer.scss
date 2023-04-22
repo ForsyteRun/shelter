@@ -1,125 +1,14 @@
-footer {
+.footer {
   @include backgroundImage("./../images/start-screen-gradient-background.png", cover, center);
-  .container {
+  padding: 40px 0 0;
+  // @media (max-width: $laptop) {
+  //   height: auto;
+  // }
+  &__container {
     display: grid;
-    grid-template-columns: 24% 25% 35%;
+    grid-template-columns: 24% 25% 26%;
     grid-template-areas: "questions adress img";
     column-gap: 152px;
-    padding: 40px 21px 0 40px;
-    .questions {
-      grid-area: questions;
-      padding: 16px 0 56px;
-      @include flex(column, space-between, left);
-      @media (max-width: $laptop) {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-      @media (max-width: $mobileL) {
-        row-gap: 36px;
-      }
-      h3 {
-        font-weight: normal;
-        color: $color-white;
-        @media (max-width: $mobileL) {
-          text-align: center;
-        }
-      }
-      &__mail {
-        @include flex(row, left, center);
-        gap: 6.5%;
-        a {
-          @include font(2rem, 1.15, 0.06em);
-          color: $color-primary;
-        }
-        @media (max-width: $mobileL) {
-          justify-content: center;
-          align-items: center;
-        }
-      }
-      &__tel {
-        @include flex(row, left, center);
-        gap: 6.5%;
-        a {
-          @include font(2rem, 1.15, 0.06em);
-          color: $color-primary;
-        }
-        @media (max-width: $mobileL) {
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
-    .adress {
-      grid-area: adress;
-      @include flex(column, space-between, left);
-      position: relative; //TODO: remove position
-      left: -6px;
-      padding: 16px 0 56px;
-      @media (max-width: $laptop) {
-        position: static;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-      @media (max-width: $middle) {
-        position: relative; //TODO: remove position
-        top: 34px;
-        left: 1px;
-        row-gap: 39px;
-      }
-      @media (max-width: $mobileL) {
-        margin-bottom: 15px;
-      }
-      @media (max-width: 330px) {
-        //TODO: ненужный брейкпоинт
-        margin-bottom: 0;
-      }
-      h3 {
-        color: $color-white;
-        @media (max-width: $mobileL) {
-          text-align: center;
-          padding: 0 10px;
-        }
-      }
-      &__top {
-        @include flex(row, left, center);
-        gap: 6.1%;
-        span {
-          @include font(2rem, 1.15, 0.06em);
-          color: $color-primary;
-        }
-      }
-      &__bottom {
-        @include flex(row, left, center);
-        gap: 6.5%;
-        span {
-          @include font(2rem, 1.15, 0.06em);
-          color: $color-primary;
-        }
-      }
-    }
-    .footer-img {
-      grid-area: img;
-      @include backgroundImage("./../images/pets/footer-puppy.png", cover, center);
-      width: 300px;
-      height: 310px;
-      @media (max-width: $sub-dekstop) {
-        width: 285px;
-        flex-basis: calc(25% + 3vw);
-        background-size: contain;
-        background-position: bottom;
-      }
-      @media (max-width: $laptop) {
-        width: 97%;
-        height: 312px;
-        grid-column: 1/4;
-      }
-      @media (max-width: $mobileL) {
-        width: 86%;
-        height: 312px;
-        position: relative;
-        left: 21px;
-      }
-    }
     @media (max-width: $sub-dekstop) {
       grid-template-columns: 32% 32% 20%;
       column-gap: 35px;
@@ -131,7 +20,7 @@ footer {
         "questions . adress"
         "img img img";
       justify-content: space-evenly;
-      padding-top: 32px;
+      // padding-top: 32px;
       row-gap: 63px;
       column-gap: 0;
     }
@@ -152,8 +41,119 @@ footer {
       padding: 30px 10px 0;
     }
   }
-  @media (max-width: $laptop) {
-    height: auto;
+  &__title {
+    color: $color-white;
+    font-weight: normal;
+    @media (max-width: $mobileL) {
+      text-align: center;
+      padding: 0 10px;
+    }
+  }
+  &__questions {
+    @include flex(column, space-between, left);
+    grid-area: questions;
+    padding: 16px 0 56px;
+    @media (max-width: $laptop) {
+      padding: 0;
+    }
+    @media (max-width: $mobileL) {
+      row-gap: 36px;
+    }
+  }
+  &__mail-svg {
+    @include backgroundImage("./../images/svg/mail.svg", cover, center);
+    height: 26px;
+  }
+  &__tel-svg {
+    @include backgroundImage("./../images/svg/phone.png", cover, center);
+  }
+  &__adress {
+    grid-area: adress;
+    @include flex(column, space-between, left);
+    // position: relative;
+    // left: -6px;
+    padding: 16px 0 56px;
+    @media (max-width: $laptop) {
+      // position: static;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    @media (max-width: $middle) {
+      // position: relative;
+      // top: 34px;
+      // left: 1px;
+      row-gap: 39px;
+    }
+    @media (max-width: $mobileL) {
+      margin-bottom: 15px;
+    }
+    // @media (max-width: 330px) {
+    //   //TODO: ненужный брейкпоинт
+    //   margin-bottom: 0;
+    // }
+    // &__top {
+    //   @include flex(row, left, center);
+    //   gap: 6.1%;
+    //   span {
+    //     @include font(2rem, 1.15, 0.06em);
+    //     color: $color-primary;
+    //   }
+    // }
+    // &__bottom {
+    //   @include flex(row, left, center);
+    //   gap: 6.5%;
+    //   span {
+    //     @include font(2rem, 1.15, 0.06em);
+    //     color: $color-primary;
+    //   }
+    // }
+  }
+  &__adress-svg {
+    @include backgroundImage("./../images/svg/icon-marker.png", contain, center);
+    &_position {
+      @include backgroundImage("./../images/svg/icon-marker.png", contain, left);
+    }
+  }
+  &__contact {
+    // @include flex(row, left, center);
+    // gap: 6.5%;
+    @media (max-width: $mobileL) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__link {
+    @include font(2rem, 1.15);
+    display: flex;
+    align-items: center;
+    column-gap: 19px;
+    color: $color-primary;
+    &_position {
+      column-gap: 0;
+    }
+  }
+  &__img {
+    grid-area: img;
+    @include backgroundImage("./../images/pets/footer-puppy.png", contain, center);
+    width: 315px;
+    height: 310px;
+    @media (max-width: $sub-dekstop) {
+      width: 285px;
+      flex-basis: calc(25% + 3vw);
+      background-size: contain;
+      background-position: bottom;
+    }
+    @media (max-width: $laptop) {
+      width: 97%;
+      height: 312px;
+      grid-column: 1/4;
+    }
+    @media (max-width: $mobileL) {
+      width: 86%;
+      height: 312px;
+      position: relative;
+      left: 21px;
+    }
   }
   .pets_container {
     padding: 41px 40px 0 40px;
