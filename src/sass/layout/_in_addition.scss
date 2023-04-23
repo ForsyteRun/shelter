@@ -1,6 +1,9 @@
 .in-addition {
   background: $backgroundFriend;
   padding: 80px 0 98px;
+  @media (max-width: $tablet) {
+    padding-bottom: 102px;
+  }
   @media (max-width: $burger) {
     padding: max(42px, 10.5vw) 0 max(42px, 12.9vw);
   }
