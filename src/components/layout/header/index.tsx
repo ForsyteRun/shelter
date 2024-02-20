@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import s from "./styles.module.scss";
+import { Nav } from "@/components/UI";
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
         <Link to="/">Cozy House</Link>
         <span className={s.subLogo}>Shelter for pets in Boston</span>
       </div>
+      <Nav />
     </header>
   );
 };
