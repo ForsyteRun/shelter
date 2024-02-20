@@ -1,6 +1,9 @@
 .header {
   @include flex();
   padding: 2.5rem 0;
+  @include _768 {
+    background-color: purple;
+  }
 }
 
 .logo {
