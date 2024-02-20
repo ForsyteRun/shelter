@@ -4,7 +4,9 @@ import s from "./styles.module.scss";
 const Header = () => {
   return (
     <header className={s.container}>
-      <Link to="/">Cozydfg House</Link>
+      <Link to="/" className={s.logo}>
+        <span>Cozy House</span>
+      </Link>
     </header>
   );
 };

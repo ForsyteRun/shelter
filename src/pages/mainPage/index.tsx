@@ -1,5 +1,11 @@
+import { BackgroundWrapper, Header } from "@/components/layout";
+
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return (
+    <BackgroundWrapper>
+      <Header />;
+    </BackgroundWrapper>
+  );
 };
 
 export default MainPage;
