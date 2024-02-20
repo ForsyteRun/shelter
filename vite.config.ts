@@ -6,4 +6,11 @@ export default defineConfig({
   resolve: {
     alias: { "@": "/src" },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/_variables.scss";`,
+      },
+    },
+  },
 });
