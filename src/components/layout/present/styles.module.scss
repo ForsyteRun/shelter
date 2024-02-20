@@ -21,7 +21,7 @@
 }
 
 .imgWrapper {
-  flex-basis: 140%;
+  flex-basis: 133%;
 }
 
 .button {
@@ -29,4 +29,9 @@
   padding: 1.5rem 4.5rem;
   border-radius: 10rem;
   font-size: 1.9rem;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: $color-primary-light;
+    transition: background-color 0.2s ease-in-out;
+  }
 }
