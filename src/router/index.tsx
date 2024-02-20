@@ -1,5 +1,5 @@
+import { MainPage, FriendsPage } from "@/pages";
 import { createBrowserRouter } from "react-router-dom";
-import { FriendsPage, MainPage } from "../pages";
 
 export const router = createBrowserRouter([
   {
