@@ -1,9 +1,10 @@
-import { BackgroundWrapper, Header } from "@/components/layout";
+import { BackgroundWrapper, Header, Present } from "@/components/layout";
 
 const MainPage = () => {
   return (
     <BackgroundWrapper>
-      <Header />;
+      <Header />
+      <Present />
     </BackgroundWrapper>
   );
 };

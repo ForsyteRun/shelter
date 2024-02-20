@@ -3,10 +3,11 @@ import s from "./styles.module.scss";
 
 const Header = () => {
   return (
-    <header className={s.container}>
-      <Link to="/" className={s.logo}>
-        <span>Cozy House</span>
-      </Link>
+    <header className={s.header}>
+      <div className={s.logo}>
+        <Link to="/">Cozy House</Link>
+        <span className={s.subLogo}>Shelter for pets in Boston</span>
+      </div>
     </header>
   );
 };

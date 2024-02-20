@@ -1,14 +1,19 @@
-.container {
-  background: url(noise_lines_transparent@2X),
-    radial-gradient(
-        234.05% 111.8% at 0% 0%,
-        rgb(91, 72, 58),
-        rgb(38, 36, 37) 100%
-      )
-      rgb(33, 31, 32);
+.header {
+  padding: 2.5rem 0;
 }
 
 .logo {
-  font-size: 3.2rem;
-  color: $color-primary;
+  & a {
+    display: inline-block;
+    font-size: 3.55rem;
+    color: $color-primary;
+    margin-bottom: 0.3rem;
+  }
+  & .subLogo {
+    font-family: "Arimo", sans-serif;
+    display: block;
+    font-size: 1.3rem;
+    color: $color-light-xl;
+    letter-spacing: 0.15rem;
+  }
 }
