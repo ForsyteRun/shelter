@@ -1,0 +1,18 @@
+.container {
+  @include flex();
+  padding: 6.8rem 0 0;
+}
+
+.content {
+  & p {
+    color: $color-dark-s;
+  }
+}
+
+.imgWrapper {
+  flex-basis: 83%;
+}
+
+.button {
+  background-color: $color-primary;
+}
