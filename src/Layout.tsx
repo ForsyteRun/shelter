@@ -1,13 +1,13 @@
-import React, { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <div>Header</div>
+      <h1>Header</h1>
       {children}
       <div>Footer</div>
     </>
