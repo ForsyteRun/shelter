@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 3.6rem;
+  & a {
+    font-family: "Arimo", sans-serif;
+    position: relative;
+    font-size: 1.5rem;
+    color: $color-light-xl;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      bottom: 0;
+      height: 0.2rem;
+      background-color: $color-primary;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 0;
+    }
+    &:hover {
+      transition: opacity 0.3s ease-in-out;
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

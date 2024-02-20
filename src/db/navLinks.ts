@@ -1,4 +1,6 @@
-export const headerNavLinks = [
+import { IHeaderNavLink } from "@/types/interfaces";
+
+export const headerNavLinks: IHeaderNavLink[] = [
   {
     title: "About the shelter",
     path: "#about",
