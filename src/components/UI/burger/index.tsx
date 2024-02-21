@@ -11,7 +11,10 @@ const Burger = () => {
 
   return (
     <>
-      <div className={s.container} onClick={handleClick}>
+      <div
+        className={cn(s.container, { [s.active]: open })}
+        onClick={handleClick}
+      >
         <span></span>
         <span></span>
         <span></span>
