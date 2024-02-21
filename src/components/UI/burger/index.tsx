@@ -1,19 +1,18 @@
-import { useState } from "react";
-import s from "./styles.module.scss";
 import cn from "classnames";
+import { FC } from "react";
+import s from "./styles.module.scss";
 
-const Burger = () => {
-  const [open, setOpen] = useState(false);
+interface PropsType {
+  handleClick: (value: boolean) => void;
+  open: boolean;
+}
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
+const Burger: FC<PropsType> = ({ handleClick, open }) => {
   return (
     <>
       <div
         className={cn(s.container, { [s.active]: open })}
-        onClick={handleClick}
+        onClick={() => handleClick(!open)}
       >
         <span></span>
         <span></span>

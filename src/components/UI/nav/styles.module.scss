@@ -1,12 +1,23 @@
 .container {
   @include flex();
   column-gap: 3.6rem;
+
   @include _1280 {
     column-gap: max(2rem, 2.8vw);
   }
 
   @include _730 {
-    display: none;
+    flex-direction: column;
+    row-gap: 5rem;
+    position: absolute;
+    top: 44%;
+    left: -100%;
+    &.active {
+      animation: toggleBurger 0.5s forwards;
+      & a {
+        z-index: 11;
+      }
+    }
   }
 
   & a {
@@ -32,5 +43,17 @@
         opacity: 1;
       }
     }
+    @include _730 {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+@keyframes toggleBurger {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 4rem;
   }
 }
