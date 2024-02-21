@@ -1,9 +1,12 @@
 .container {
   display: none;
+  order: 1;
   position: relative;
   right: 0;
   width: 3rem;
   height: 2rem;
+  cursor: pointer;
+  z-index: 11;
 
   & :first-child,
   & :last-child,
@@ -30,4 +33,16 @@
   @include _730 {
     display: block;
   }
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 32rem;
+  background-color: $color-dark-3xl;
+  z-index: 10;
+  height: 100%;
 }
