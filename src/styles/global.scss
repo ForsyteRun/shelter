@@ -17,6 +17,9 @@ body {
   max-width: 128rem;
   padding: 0 4rem;
   margin: 0 auto;
+  @include _1280 {
+    padding: 0 max(3rem, 3.125vw);
+  }
 }
 
 h2,

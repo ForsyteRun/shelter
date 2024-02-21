@@ -1,6 +1,14 @@
 .container {
   @include flex();
   column-gap: 3.6rem;
+  @include _1280 {
+    column-gap: max(2rem, 2.8vw);
+  }
+
+  @include _730 {
+    display: none;
+  }
+
   & a {
     font-family: "Arimo", sans-serif;
     position: relative;
