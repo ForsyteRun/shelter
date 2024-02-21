@@ -16,7 +16,7 @@ const Burger = () => {
         <span></span>
         <span></span>
       </div>
-      <div className={cn({ [s.menu]: open })}></div>
+      <div className={cn(s.menu, { [s.active]: open })}></div>
     </>
   );
 };
