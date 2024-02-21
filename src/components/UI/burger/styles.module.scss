@@ -1,0 +1,33 @@
+.container {
+  display: none;
+  position: relative;
+  right: 0;
+  width: 3rem;
+  height: 2rem;
+
+  & :first-child,
+  & :last-child,
+  & :nth-child(2) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0.2rem;
+    background-color: $color-primary;
+  }
+
+  & :first-child {
+    top: 0;
+  }
+
+  & :nth-child(2) {
+    top: 50%;
+  }
+
+  & :last-child {
+    top: 100%;
+  }
+
+  @include _730 {
+    display: block;
+  }
+}

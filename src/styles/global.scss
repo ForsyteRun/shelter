@@ -20,6 +20,9 @@ body {
   @include _1280 {
     padding: 0 max(3rem, 3.125vw);
   }
+  @include _730 {
+    padding: 0 max(2rem, 4.1vw);
+  }
 }
 
 h2,

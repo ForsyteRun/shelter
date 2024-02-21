@@ -1,6 +1,7 @@
 import { headerNavLinks } from "@/db/navLinks";
 import { Link } from "react-router-dom";
 import s from "./styles.module.scss";
+import Burger from "../burger";
 
 const Nav = () => {
   return (
@@ -12,6 +13,7 @@ const Nav = () => {
           </Link>
         ))}
       </div>
+      <Burger />
     </>
   );
 };
