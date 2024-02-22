@@ -3,7 +3,7 @@
   column-gap: 3.6rem;
 
   @include _1280 {
-    column-gap: max(2rem, 2.8vw);
+    column-gap: 3.6rem;
   }
 
   @include _730 {
