@@ -1,20 +1,21 @@
+import { pathEnum } from "@/types/enum";
 import { IHeaderNavLink } from "@/types/interfaces";
 
 export const headerNavLinks: IHeaderNavLink[] = [
   {
     title: "About the shelter",
-    path: "#about",
+    path: pathEnum.ABOUT,
   },
   {
     title: "Our pets",
-    path: "#pets",
+    path: pathEnum.PETS,
   },
   {
     title: "Help the shelter",
-    path: "#help",
+    path: pathEnum.HELP,
   },
   {
     title: "Contacts",
-    path: "#contacts",
+    path: pathEnum.CONTACTS,
   },
 ];

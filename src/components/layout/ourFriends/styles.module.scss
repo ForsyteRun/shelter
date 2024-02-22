@@ -1,3 +1,15 @@
+.wrapper {
+  background-color: $color-light-l;
+}
+
+.container {
+  padding: 8rem 0 10rem;
+}
+
 .title {
   text-align: center;
+  margin-bottom: 6rem;
+  & span {
+    display: block;
+  }
 }

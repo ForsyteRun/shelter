@@ -1,0 +1,28 @@
+.container {
+  @include flex(column);
+  background-color: $color-light-s;
+  & img,
+  & h3 {
+    margin-bottom: 3rem;
+    background-color: transparent;
+  }
+
+  & h3 {
+    color: $color-dark-l;
+    font-weight: 400;
+  }
+}
+
+.button {
+  background-color: transparent;
+  color: $color-dark-3xl;
+  border: 2px solid $color-primary;
+  padding: 1.5rem 4.5rem;
+  border-radius: 10rem;
+  font-size: 1.9rem;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: $color-primary-light;
+    transition: background-color 0.2s ease-in-out;
+  }
+}

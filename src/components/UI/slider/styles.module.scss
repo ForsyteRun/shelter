@@ -1,5 +1,7 @@
-.container {
-  & div {
-    background-color: blue;
+.sliderWrapper {
+  width: 73%;
+  margin: 0 auto;
+  & .container {
+    column-gap: 5rem;
   }
 }
