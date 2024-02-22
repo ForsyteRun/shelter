@@ -23,6 +23,9 @@ body {
   @include _730 {
     padding: 0 max(2rem, 4.1vw);
   }
+  @include _375 {
+    padding: 0 1rem;
+  }
 }
 
 h2,
@@ -42,6 +45,9 @@ h1 {
 h2 {
   font-size: 3.5rem;
   font-weight: 400;
+  @include _730 {
+    font-size: max(2.5rem, 5vw);
+  }
 }
 
 h3 {
