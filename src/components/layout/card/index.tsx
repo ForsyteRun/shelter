@@ -13,7 +13,7 @@ const Card: FC<PropsType> = ({ title, path, styles }) => {
     <div className={cn(styles, s.container)}>
       <img src={path} alt={title} />
       <h3>{title}</h3>
-      <Button title="Learn more" styles={s.button}></Button>
+      <Button title="Learn more" styles={cn("button", s.button)}></Button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import Button from "@/components/UI/button";
 import s from "./styles.module.scss";
 import puppy from "@/assets/start-screen-puppy.png";
+import cn from "classnames";
 
 const Present = () => {
   return (
@@ -14,7 +15,7 @@ const Present = () => {
           wide and open heart. He or she will love you more than anybody else in
           the world, you will see!
         </p>
-        <Button title="Make a friend" styles={s.button} />
+        <Button title="Make a friend" styles={cn("button", s.button)} />
       </div>
       <div className={s.imgWrapper}>
         <img src={puppy} alt="dog" />

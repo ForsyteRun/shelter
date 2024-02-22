@@ -60,6 +60,18 @@ h4 {
   line-height: 1.1;
 }
 
+.button {
+  color: $color-dark-3xl;
+  padding: 1.5rem 4.5rem;
+  border-radius: 10rem;
+  font-size: 1.9rem;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: $color-primary-light;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
 .keen-slider__slide {
   min-width: 27rem !important;
   max-width: 27rem !important;

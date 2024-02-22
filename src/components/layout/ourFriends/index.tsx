@@ -14,7 +14,10 @@ const OurFriends = () => {
         <div className={s.sliderWrapper}>
           <Slider />
         </div>
-        {/* <Button></Button> */}
+        <Button
+          title="Get to know the rest"
+          styles={cn("button", s.button)}
+        ></Button>
       </div>
     </div>
   );
