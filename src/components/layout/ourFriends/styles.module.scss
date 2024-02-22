@@ -4,6 +4,7 @@
 
 .container {
   padding: 8rem 0 10rem;
+  @include flex(column);
 }
 
 .title {
@@ -17,5 +18,5 @@
 .button {
   background-color: $color-primary;
   border: none;
-  text-align: center;
+  margin-top: 5rem;
 }
