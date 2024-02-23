@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "license": "MIT",
   "dependencies": {
     "keen-slider": "^6.8.6",
     "normalize.css": "^8.0.1",
