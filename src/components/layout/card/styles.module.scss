@@ -9,6 +9,12 @@
     background-color: transparent;
   }
 
+  & img {
+    @include _768 {
+      margin-bottom: 2.5rem;
+    }
+  }
+
   & h3 {
     color: $color-dark-l;
     font-weight: 400;
@@ -17,4 +23,8 @@
 
 .button {
   border: 2px solid $color-primary;
+  &:hover {
+    background-color: $color-primary-light;
+    transition: background-color 0.2s ease-in-out;
+  }
 }
