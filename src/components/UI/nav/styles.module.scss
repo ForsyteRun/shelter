@@ -1,0 +1,59 @@
+.container {
+  @include flex();
+  column-gap: 3.6rem;
+
+  @include _1280 {
+    column-gap: 3.6rem;
+  }
+
+  @include _730 {
+    flex-direction: column;
+    row-gap: 5rem;
+    position: absolute;
+    top: 44%;
+    left: -100%;
+    &.active {
+      animation: toggleBurger 0.5s forwards;
+      & a {
+        z-index: 11;
+      }
+    }
+  }
+
+  & a {
+    font-family: "Arimo", sans-serif;
+    position: relative;
+    font-size: 1.5rem;
+    color: $color-light-xl;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      bottom: 0;
+      height: 0.2rem;
+      background-color: $color-primary;
+      transition: opacity 0.2s ease-in-out;
+      opacity: 0;
+    }
+    &:hover {
+      transition: opacity 0.3s ease-in-out;
+      &::after {
+        opacity: 1;
+      }
+    }
+    @include _730 {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+@keyframes toggleBurger {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 4rem;
+  }
+}

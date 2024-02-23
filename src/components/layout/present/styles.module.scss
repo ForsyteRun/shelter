@@ -1,0 +1,67 @@
+.container {
+  @include flex();
+  column-gap: 3rem;
+  padding: 6.8rem 0 0;
+  @include _890 {
+    flex-direction: column;
+    row-gap: 6rem;
+    padding-top: 7.2rem;
+  }
+}
+
+.content {
+  @include flex(column, flex-start, flex-start);
+  row-gap: 4.4rem;
+  position: relative;
+  bottom: 4rem;
+  @include _890 {
+    width: 65%;
+    align-items: center;
+  }
+  @include _730 {
+    width: initial;
+  }
+  & p {
+    font-family: "Arimo", sans-serif;
+    color: $color-dark-s;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    @include _730 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  & h1 {
+    width: 35rem;
+    @include _890 {
+      width: 46rem;
+      & span {
+        display: inline-block;
+      }
+    }
+    @include _730 {
+      width: initial;
+      text-align: center;
+      word-spacing: 0.4rem;
+      font-size: max(2.5rem, 6vw);
+    }
+  }
+}
+
+.imgWrapper {
+  flex-basis: 133%;
+  @include _890 {
+    width: 80%;
+    align-self: flex-end;
+  }
+  @include _730 {
+    width: 87%;
+    text-align: center;
+  }
+}
+
+.button {
+  background-color: $color-primary;
+  border: none;
+}

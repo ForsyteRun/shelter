@@ -1,0 +1,54 @@
+.container {
+  @include flex(row, flex-start, flex-start);
+  column-gap: 12rem;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+  @include _890 {
+    @include flex(column-reverse);
+    row-gap: 8rem;
+  }
+  @include _730 {
+    padding-top: max(4rem, 11vw);
+    row-gap: 4rem;
+  }
+  & .imageWrapper {
+    flex-basis: 39.5%;
+    @include _730 {
+      width: 87%;
+    }
+    & img {
+      margin: 0 0 0 auto;
+      @include _730 {
+        margin: 0 auto;
+      }
+    }
+  }
+  & .content {
+    @include flex(column, flex-start, flex-start);
+    flex-basis: 36%;
+    row-gap: 2.5rem;
+    padding-top: 1rem;
+    @include _890 {
+      width: 60%;
+      padding-top: 0;
+    }
+    @include _730 {
+      width: 90%;
+      row-gap: 2.4rem;
+    }
+    & h2 {
+      width: 40rem;
+      word-spacing: 1.4rem;
+      @include _730 {
+        width: initial;
+        text-align: center;
+      }
+    }
+    & p {
+      font-family: "Arimo", sans-serif;
+      color: $color-dark-xl;
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+}

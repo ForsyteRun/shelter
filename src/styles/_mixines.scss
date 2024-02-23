@@ -1,0 +1,36 @@
+@mixin flex($direction: row, $justify: space-between, $item: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $item;
+}
+
+@mixin _1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin _890 {
+  @media (max-width: 890px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _730 {
+  @media (max-width: 730px) {
+    @content;
+  }
+}
+
+@mixin _375 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}

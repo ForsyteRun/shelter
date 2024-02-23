@@ -1,0 +1,23 @@
+.header {
+  @include flex();
+  padding: 2.5rem 0;
+  @include _730 {
+    padding: 2.5rem 1rem;
+  }
+}
+
+.logo {
+  & a {
+    display: inline-block;
+    font-size: 3.55rem;
+    color: $color-primary;
+    margin-bottom: 0.3rem;
+  }
+  & .subLogo {
+    font-family: "Arimo", sans-serif;
+    display: block;
+    font-size: 1.3rem;
+    color: $color-light-xl;
+    letter-spacing: 0.15rem;
+  }
+}
