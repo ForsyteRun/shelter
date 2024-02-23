@@ -8,26 +8,28 @@ import { Card } from "@/components/layout";
 const Slider = () => {
   const [ref] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
-      },
       "(min-width: 1000px)": {
-        slides: { perView: 3, spacing: 10 },
+        slides: { perView: 3, spacing: 90 },
+      },
+      // "(max-width: 1000px)": {
+      //   slides: { perView: 2, spacing: 5 },
+      // },
+      "(max-width: 730px)": {
+        slides: { perView: 1, spacing: 5 },
       },
     },
+    loop: true,
   });
   return (
-    <div className={s.sliderWrapper}>
-      <div ref={ref} className={cn("keen-slider", s.container)}>
-        {sliderData.map(({ path, title }) => (
-          <Card
-            path={path}
-            title={title}
-            key={title}
-            styles="keen-slider__slide"
-          />
-        ))}
-      </div>
+    <div ref={ref} className={cn("keen-slider")}>
+      {sliderData.map(({ path, title }) => (
+        <Card
+          path={path}
+          title={title}
+          key={title}
+          styles="keen-slider__slide"
+        />
+      ))}
     </div>
   );
 };

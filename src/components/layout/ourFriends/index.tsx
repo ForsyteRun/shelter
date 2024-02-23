@@ -11,7 +11,7 @@ const OurFriends = () => {
           Our friends who
           <span>are looking for a house</span>
         </h2>
-        <div className={s.sliderWrapper}>
+        <div style={{ maxWidth: "77%" }}>
           <Slider />
         </div>
         <Button
