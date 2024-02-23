@@ -2,14 +2,25 @@
   background-color: $color-light-l;
 }
 
+.sliderWrapper {
+  width: 77%;
+  position: relative;
+}
+
 .container {
   padding: 8rem 0 10rem;
   @include flex(column);
+  @include _730 {
+    padding: max(4rem, 10.97vw) 0 max(4.2rem, 13.7vw);
+  }
 }
 
 .title {
   text-align: center;
   margin-bottom: 6rem;
+  @include _730 {
+    margin-bottom: max(4.5rem, 8.23vw);
+  }
   & span {
     display: block;
   }
@@ -19,4 +30,7 @@
   background-color: $color-primary;
   border: none;
   margin-top: 5rem;
+  @include _730 {
+    margin-top: 11rem;
+  }
 }

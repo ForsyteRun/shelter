@@ -1,6 +1,6 @@
 import Button from "@/components/UI/button";
 import s from "./styles.module.scss";
-import { Slider } from "@/components/UI";
+import { Slider, SliderBtns } from "@/components/UI";
 import cn from "classnames";
 
 const OurFriends = () => {
@@ -11,8 +11,9 @@ const OurFriends = () => {
           Our friends who
           <span>are looking for a house</span>
         </h2>
-        <div style={{ maxWidth: "77%" }}>
+        <div className={s.sliderWrapper}>
           <Slider />
+          <SliderBtns />
         </div>
         <Button
           title="Get to know the rest"

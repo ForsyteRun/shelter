@@ -1,0 +1,38 @@
+.buttonLeft,
+.buttonRight {
+  position: absolute;
+  top: 43.5%;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  border: solid 1px $color-primary;
+  transition: background 0.5s ease;
+  cursor: pointer;
+  &:hover {
+    background: $color-primary;
+    transition: background 0.5s ease;
+  }
+  @include _730 {
+    top: 104%;
+  }
+}
+
+.buttonLeft {
+  left: -10.6rem;
+  @include _1280 {
+    left: min(-6.6rem, -8.35vw);
+  }
+  @include _730 {
+    left: 13%;
+  }
+}
+.buttonRight {
+  right: -10.6rem;
+  @include _1280 {
+    right: min(-6.6rem, -8.35vw);
+  }
+  @include _730 {
+    right: 13%;
+  }
+}
