@@ -2,11 +2,6 @@
   background-color: $color-light-l;
 }
 
-.sliderWrapper {
-  width: 77%;
-  position: relative;
-}
-
 .container {
   padding: 8rem 0 10rem;
   @include flex(column);

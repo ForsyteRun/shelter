@@ -15,3 +15,8 @@ export const enum sliderTitleEnum {
   FREDDIE = "Freddie",
   CHARLY = "Charly",
 }
+
+export const enum sliderMoveEnum {
+  NEXT = "next",
+  PREV = "prev",
+}

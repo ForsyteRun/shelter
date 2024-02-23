@@ -1,7 +1,7 @@
 import Button from "@/components/UI/button";
-import s from "./styles.module.scss";
-import { Slider, SliderBtns } from "@/components/UI";
 import cn from "classnames";
+import { SliderBlock } from "..";
+import s from "./styles.module.scss";
 
 const OurFriends = () => {
   return (
@@ -11,10 +11,7 @@ const OurFriends = () => {
           Our friends who
           <span>are looking for a house</span>
         </h2>
-        <div className={s.sliderWrapper}>
-          <Slider />
-          <SliderBtns />
-        </div>
+        <SliderBlock />
         <Button
           title="Get to know the rest"
           styles={cn("button", s.button)}

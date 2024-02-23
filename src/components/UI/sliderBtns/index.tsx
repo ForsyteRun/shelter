@@ -1,9 +1,22 @@
+import { FC } from "react";
 import s from "./styles.module.scss";
+import { sliderMoveEnum } from "@/types/enum";
 
-const SliderBtns = () => {
+interface IProps {
+  setSlide: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const SliderBtns: FC<IProps> = ({ setSlide }) => {
+  const handleClick = (value: sliderMoveEnum) => {
+    value === "next" ? setSlide((prev) => ++prev) : setSlide((prev) => --prev);
+  };
+
   return (
     <>
-      <button className={s.buttonLeft}>
+      <button
+        className={s.buttonLeft}
+        onClick={() => handleClick(sliderMoveEnum.PREV)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -16,7 +29,10 @@ const SliderBtns = () => {
           />
         </svg>
       </button>
-      <button className={s.buttonRight}>
+      <button
+        className={s.buttonRight}
+        onClick={() => handleClick(sliderMoveEnum.NEXT)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"

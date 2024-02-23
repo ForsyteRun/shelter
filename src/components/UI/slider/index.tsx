@@ -1,12 +1,16 @@
+import { FC, useEffect, useState } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import cn from "classnames";
 import { sliderData } from "@/db/slider";
 import { Card } from "@/components/layout";
-import s from "./styles.module.scss";
 
-const Slider = () => {
-  const [ref] = useKeenSlider<HTMLDivElement>({
+interface IProps {
+  slide: number;
+}
+
+const Slider: FC<IProps> = ({ slide }) => {
+  const [moveSlide, setMoveSlide] = useState(slide);
+  const [ref, slider] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
       "(min-width: 1180px)": {
         slides: { perView: 3, spacing: 90 },
@@ -20,8 +24,19 @@ const Slider = () => {
     },
     loop: true,
   });
+
+  useEffect(() => {
+    if (moveSlide > slide) {
+      slider.current?.next();
+    } else {
+      slider.current?.prev();
+    }
+
+    setMoveSlide(slide);
+  }, [slide]);
+
   return (
-    <div ref={ref} className={cn("keen-slider", s.container)}>
+    <div ref={ref} className="keen-slider">
       {sliderData.map(({ path, title }) => (
         <Card
           path={path}
