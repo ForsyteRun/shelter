@@ -10,10 +10,13 @@ const Help = () => {
         How you can help <div>our shelter</div>
       </h2>
       <div className={s.content}>
-        {helpData.map(({ title, path }: IHelpData) => (
-          <div key={title} className={s.contentContainer}>
+        {helpData.map(({ title, path }: IHelpData, index) => (
+          <div
+            key={title}
+            className={cn(s.contentContainer, { [s.lastRow]: index > 4 })}
+          >
             <img src={path} alt={title} />
-            <h3 className={s.title}>{title}</h3>
+            <h3 className={cn(s.title)}>{title}</h3>
           </div>
         ))}
       </div>

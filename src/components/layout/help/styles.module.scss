@@ -1,26 +1,59 @@
 .container {
   padding: 8rem 0 10rem;
+  @include _768 {
+    padding: max(3.7rem, 10.41vw) 0 max(4.2rem, 13.02vw);
+  }
   & h2 {
     text-align: center;
     margin-bottom: 6rem;
+    @include _730 {
+      margin-bottom: max(3.4rem, 8.21vw);
+      font-size: 2.8rem;
+    }
   }
 }
 
 .content {
-  @include flex(row, center, flex-start);
-  flex-wrap: wrap;
-  column-gap: 13rem;
-  width: 86%;
-  row-gap: 5.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center;
+  width: 92%;
   margin: 0 auto;
+  row-gap: 55px;
+  @include _890 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include _730 {
+    grid-template-columns: repeat(2, 1fr);
+    width: initial;
+    row-gap: 2.7rem;
+  }
+}
+
+.contentContainer {
+  @include flex(column);
+  & img {
+    @include _375 {
+      width: 31%;
+    }
+  }
+}
+
+.lastRow {
+  position: relative;
+  left: 9rem;
+  @include _890 {
+    position: initial;
+  }
 }
 
 .title {
   color: $color-dark-l;
   font-weight: 400;
   margin-top: 3rem;
-}
-
-.contentContainer {
-  @include flex(column);
+  @include _730 {
+    font-size: max(1.6rem, 2.73vw);
+    margin-top: 2.23rem;
+  }
 }
