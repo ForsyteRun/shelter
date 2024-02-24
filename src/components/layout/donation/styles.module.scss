@@ -7,10 +7,20 @@
     flex-direction: column-reverse;
     row-gap: 6rem;
   }
+  @include _768 {
+    padding-top: max(4rem, 10.41vw);
+    padding-bottom: max(4.2rem, 13.02vw);
+  }
+  @include _375 {
+    row-gap: 3rem;
+  }
 }
 
 .title {
   letter-spacing: 0.2rem;
+  @include _375 {
+    text-align: center;
+  }
   & span {
     display: block;
   }
@@ -20,6 +30,10 @@
   flex-basis: 134%;
   & img {
     margin: 0 0 0 auto;
+    @include _375 {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -30,17 +44,32 @@
     width: 54%;
     row-gap: 2.9rem;
   }
+  @include _730 {
+    width: 80%;
+    align-items: center;
+  }
+  @include _375 {
+    width: 95%;
+  }
   & h4 {
     letter-spacing: 0.1rem;
     font-weight: 400;
     margin-top: -0.5rem;
+    @include _375 {
+      letter-spacing: normal;
+      margin-bottom: 0.5rem;
+    }
   }
   & h5 {
     width: 60%;
     margin-top: -1rem;
+    font-style: italic;
     @include _890 {
       width: initial;
       margin-top: -0.5rem;
+    }
+    @include _375 {
+      letter-spacing: 0.05rem;
     }
   }
 }
@@ -56,6 +85,9 @@
   @include _890 {
     width: 92%;
   }
+  @include _375 {
+    width: 100%;
+  }
   & span {
     font-size: 2.25rem;
     @include _1280 {
@@ -63,6 +95,12 @@
     }
     @include _890 {
       font-size: 2.25rem;
+    }
+    @include _730 {
+      font-size: max(1.5rem, 2.9vw);
+    }
+    @include _375 {
+      font-size: 1.72rem;
     }
   }
 }
