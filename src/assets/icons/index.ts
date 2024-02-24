@@ -7,6 +7,7 @@ import sleeping from "./icon-sleeping-area.svg";
 import toys from "./icon-toys.svg";
 import transportation from "./icon-transportation.svg";
 import vitamins from "./icon-vitamins.svg";
+import card from "./credit-card.svg";
 
 export {
   bowls,
@@ -18,4 +19,5 @@ export {
   toys,
   transportation,
   vitamins,
+  card,
 };

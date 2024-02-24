@@ -1,6 +1,7 @@
 import {
   About,
   BackgroundWrapper,
+  Donation,
   Header,
   Help,
   OurFriends,
@@ -15,8 +16,13 @@ const MainPage = () => {
         <Present />
       </BackgroundWrapper>
       <About />
-      <OurFriends />
+      <div className="wrapper">
+        <OurFriends />
+      </div>
       <Help />
+      <div className="wrapper">
+        <Donation />
+      </div>
     </>
   );
 };

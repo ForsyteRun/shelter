@@ -1,0 +1,46 @@
+.container {
+  @include flex();
+  column-gap: 3rem;
+  padding: 8rem 0 10rem;
+}
+
+.title {
+  letter-spacing: 0.2rem;
+  & span {
+    display: block;
+  }
+}
+
+.imageWrapper {
+  flex-basis: 125%;
+  padding-top: 1rem;
+  & img {
+    margin: 0 0 0 auto;
+  }
+}
+
+.content {
+  @include flex(column, space-between, flex-start);
+  row-gap: 3rem;
+  & h4 {
+    letter-spacing: 0.1rem;
+    margin-top: -0.5rem;
+  }
+  & h5 {
+    width: 60%;
+    margin-top: -1rem;
+  }
+}
+
+.donation {
+  @include flex();
+  width: 62%;
+  height: 4.3rem;
+  background-color: $color-primary;
+  border-radius: 0.9rem;
+  margin-top: -1.2rem;
+  padding: 0 1.3rem;
+  & span {
+    font-size: 2.25rem;
+  }
+}
