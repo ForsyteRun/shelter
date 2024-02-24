@@ -20,3 +20,15 @@ export const enum sliderMoveEnum {
   NEXT = "next",
   PREV = "prev",
 }
+
+export const enum helpEnum {
+  PET_FOOD = "Pet food",
+  TRANSPORTATION = "Transportation",
+  TOYS = "Toys",
+  BOWLS_CUPS = "Bowls and cups",
+  SHAMPOOS = "Shampoos",
+  VITAMINS = "Vitamins",
+  MEDICINES = "Medicines",
+  COLLARS = "Collars / leashes",
+  SLEEPING = "Sleeping areas",
+}

@@ -2,6 +2,7 @@ import {
   About,
   BackgroundWrapper,
   Header,
+  Help,
   OurFriends,
   Present,
 } from "@/components/layout";
@@ -15,6 +16,7 @@ const MainPage = () => {
       </BackgroundWrapper>
       <About />
       <OurFriends />
+      <Help />
     </>
   );
 };

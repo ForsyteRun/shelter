@@ -1,4 +1,4 @@
-import { pathEnum, sliderTitleEnum } from "./enum";
+import { helpEnum, pathEnum, sliderTitleEnum } from "./enum";
 
 export interface IHeaderNavLink {
   title: string;
@@ -7,4 +7,7 @@ export interface IHeaderNavLink {
 export interface ISliderData {
   title: sliderTitleEnum;
   path: string;
+}
+export interface IHelpData extends Omit<ISliderData, "title"> {
+  title: helpEnum;
 }

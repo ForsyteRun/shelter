@@ -1,0 +1,26 @@
+.container {
+  padding: 8rem 0 10rem;
+  & h2 {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+}
+
+.content {
+  @include flex(row, center, flex-start);
+  flex-wrap: wrap;
+  column-gap: 13rem;
+  width: 86%;
+  row-gap: 5.5rem;
+  margin: 0 auto;
+}
+
+.title {
+  color: $color-dark-l;
+  font-weight: 400;
+  margin-top: 3rem;
+}
+
+.contentContainer {
+  @include flex(column);
+}
