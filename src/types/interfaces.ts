@@ -11,3 +11,13 @@ export interface ISliderData {
 export interface IHelpData extends Omit<ISliderData, "title"> {
   title: helpEnum;
 }
+
+export interface IFooterInfo {
+  title: string;
+  info: IFooterInfoContent[];
+}
+
+export interface IFooterInfoContent {
+  logo: string;
+  content: string;
+}

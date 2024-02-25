@@ -2,14 +2,14 @@
   @include flex();
   column-gap: 3rem;
   padding-top: 8rem;
-  padding-bottom: 10rem;
+  padding-bottom: 9em;
   @include _890 {
     flex-direction: column-reverse;
     row-gap: 6rem;
   }
   @include _768 {
     padding-top: max(4rem, 10.41vw);
-    padding-bottom: max(4.2rem, 13.02vw);
+    padding-bottom: max(4.2rem, 11.7vw);
   }
   @include _375 {
     row-gap: 3rem;

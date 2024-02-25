@@ -8,6 +8,9 @@ import toys from "./icon-toys.svg";
 import transportation from "./icon-transportation.svg";
 import vitamins from "./icon-vitamins.svg";
 import card from "./credit-card.svg";
+import email from "./icon-email.svg";
+import phone from "./icon-phone.svg";
+import marker from "./icon-marker.svg";
 
 export {
   bowls,
@@ -20,4 +23,7 @@ export {
   transportation,
   vitamins,
   card,
+  email,
+  phone,
+  marker,
 };

@@ -7,3 +7,5 @@ export { default as Card } from "./card";
 export { default as SliderBlock } from "./sliderBlock";
 export { default as Help } from "./help";
 export { default as Donation } from "./donation";
+export { default as Footer } from "./footer";
+export { default as FooterInfo } from "./footerInfo";

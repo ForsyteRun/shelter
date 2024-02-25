@@ -1,0 +1,43 @@
+.container {
+  @include flex(row-reverse, space-between, flex-start);
+  padding: 4rem 0 0 0;
+}
+
+.childContainerLeft {
+  @include flex(column, space-between, flex-start);
+  flex-basis: 23%;
+  padding-top: 1.6rem;
+  row-gap: 4.2rem;
+  & h2 {
+    color: $color-light-xl;
+  }
+  & div {
+    @include flex(row, space-between, flex-start);
+    width: 84%;
+    column-gap: 2rem;
+
+    & h3 {
+      color: $color-primary;
+      font-weight: 400;
+    }
+  }
+}
+
+.childContainerRight {
+  @include flex(column, space-between, flex-start);
+  flex-basis: 23%;
+  padding-top: 1.6rem;
+  row-gap: 3.2rem;
+  margin-left: -2rem;
+  & h2 {
+    color: $color-light-xl;
+  }
+  & div {
+    @include flex(row, space-between, center);
+    column-gap: 2rem;
+    & h3 {
+      color: $color-primary;
+      font-weight: 400;
+    }
+  }
+}
