@@ -8,12 +8,19 @@
 }
 
 .contentContainer {
-  @include flex(row, space-between, center);
+  @include flex(row, space-between, flex-start);
   width: 67%;
   margin-bottom: 4rem;
   @include _1020 {
     width: inherit;
     margin-bottom: 6.5rem;
+  }
+  @include _730 {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+    width: 100%;
+    margin-bottom: 3rem;
   }
 }
 
@@ -24,9 +31,13 @@
   @include _1020 {
     padding-top: 0.5rem;
   }
+
   & h2 {
     color: $color-light-xl;
     letter-spacing: 0.3rem;
+    @include _730 {
+      text-align: center;
+    }
   }
   & div {
     column-gap: 2rem;
@@ -42,9 +53,16 @@
   @include _1020 {
     padding-left: 3.2rem;
   }
+  @include _768 {
+    padding-left: 0;
+  }
+
   & div {
     @include flex(row, space-between, flex-start);
     width: 64%;
+    @include _730 {
+      justify-content: flex-start;
+    }
     & h3 {
       white-space: nowrap;
     }
@@ -57,6 +75,10 @@
   @include _1020 {
     flex-basis: 48%;
   }
+  @include _730 {
+    margin-left: 0;
+    row-gap: 4.5rem;
+  }
   & div {
     @include flex(row, space-between, center);
   }
@@ -66,5 +88,8 @@
   align-self: flex-end;
   @include _1020 {
     align-self: center;
+  }
+  @include _730 {
+    width: 87%;
   }
 }
