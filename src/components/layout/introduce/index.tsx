@@ -10,7 +10,7 @@ const Introduce = () => {
 
       if (innerWidth > 730) return;
 
-      if (target.className.includes("burgerContainer")) {
+      if (target.closest(".burgerContainer")) {
         setOpen(!open);
       } else if (
         !target.className.includes("menu") &&
@@ -18,8 +18,6 @@ const Introduce = () => {
         open
       ) {
         setOpen(false);
-      } else {
-        return;
       }
     },
     [open]

@@ -11,7 +11,9 @@ const Burger: FC<PropsType> = ({ handleClick, open }) => {
   return (
     <>
       <div
-        className={cn(s.burgerContainer, { [s.active]: open })}
+        className={cn("burgerContainer", {
+          [s.active]: open,
+        })}
         onClick={(e) => handleClick(e)}
       >
         <span></span>
