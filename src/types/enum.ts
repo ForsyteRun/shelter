@@ -3,6 +3,8 @@ export const enum pathEnum {
   PETS = "#pets",
   HELP = "#help",
   CONTACTS = "#contacts",
+  FRIIENDS = "friends",
+  MAIN = "main",
 }
 
 export const enum sliderTitleEnum {
