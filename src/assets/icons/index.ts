@@ -11,6 +11,7 @@ import card from "./credit-card.svg";
 import email from "./icon-email.svg";
 import phone from "./icon-phone.svg";
 import marker from "./icon-marker.svg";
+import vector from "./vector.png";
 
 export {
   bowls,
@@ -26,4 +27,5 @@ export {
   email,
   phone,
   marker,
+  vector,
 };

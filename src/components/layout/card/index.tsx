@@ -1,25 +1,22 @@
-import { FC, Dispatch, SetStateAction } from "react";
-import { Button, Modal } from "@/components/UI";
+import { Button } from "@/components/UI";
 import { ISliderData } from "@/types/interfaces";
 import cn from "classnames";
+import { Dispatch, FC, SetStateAction, useCallback } from "react";
 import s from "./styles.module.scss";
 
-interface PropsType extends ISliderData {
+interface PropsType {
+  data: ISliderData;
   styles: string;
-  isModal: boolean;
-  callback: Dispatch<SetStateAction<boolean>>;
+  callback: Dispatch<SetStateAction<ISliderData | null>>;
 }
 
-const Card: FC<PropsType> = ({
-  title,
-  path,
-  styles,
-  disc,
-  type,
-  info,
-  isModal,
-  callback,
-}) => {
+const Card: FC<PropsType> = ({ data, styles, callback }) => {
+  const { title, path } = data;
+
+  const handleClick = useCallback(() => {
+    callback(data);
+  }, [data, callback]);
+
   return (
     <div className={cn(styles, s.container)}>
       <img src={path} alt={title} />
@@ -27,8 +24,7 @@ const Card: FC<PropsType> = ({
       <Button
         title="Learn more"
         styles={cn("button", s.button)}
-        isModal={isModal}
-        callback={callback}
+        callback={handleClick}
       />
     </div>
   );

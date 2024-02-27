@@ -1,20 +1,14 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 
 interface Props {
   title: string;
   styles: string;
-  isModal?: boolean;
-  callback?: Dispatch<SetStateAction<boolean>>;
+  callback: () => void;
 }
 
-const Button: FC<Props> = ({
-  title,
-  styles,
-  isModal = false,
-  callback = () => {},
-}) => {
+const Button: FC<Props> = ({ title, styles, callback = () => {} }) => {
   return (
-    <button className={styles} onClick={() => callback(!isModal)}>
+    <button className={styles} onClick={callback}>
       {title}
     </button>
   );

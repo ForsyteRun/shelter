@@ -12,7 +12,7 @@ interface IProps {
 
 const Slider: FC<IProps> = ({ slide }) => {
   const [moveSlide, setMoveSlide] = useState(slide);
-  const [isModal, setIsModal] = useState(false);
+  const [modalData, setModalData] = useState<ISliderData | null>(null);
 
   const [ref, slider] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
@@ -41,24 +41,17 @@ const Slider: FC<IProps> = ({ slide }) => {
 
   return (
     <div ref={ref} className="keen-slider">
-      {sliderData.map(({ path, title, type, disc, info }: ISliderData) => (
+      {sliderData.map((data: ISliderData) => (
         <>
           <Card
-            path={path}
-            title={title}
-            type={type}
-            disc={disc}
-            info={info}
+            data={data}
             styles="keen-slider__slide"
-            callback={setIsModal}
-            isModal={isModal}
-            key={title}
+            callback={setModalData}
+            key={data.title}
           />
-          {isModal && (
-            <Modal title={title} type={type} disc={disc} info={info} />
-          )}
         </>
       ))}
+      {modalData && <Modal data={modalData} callback={setModalData} />}
     </div>
   );
 };

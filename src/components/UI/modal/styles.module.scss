@@ -4,6 +4,25 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: aqua;
+  background-color: $color-grey;
   z-index: 11;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90rem;
+  max-height: 50rem;
+  background-color: $color-light-s;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & .close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    border: 1px solid $color-primary;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
 }
