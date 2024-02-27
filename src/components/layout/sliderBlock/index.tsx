@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Slider, SliderBtns } from "@/components/UI";
+import { Slider, SliderNavigation } from "@/components/UI";
 import s from "./styles.module.scss";
 
 const SliderBlock = () => {
@@ -8,7 +8,7 @@ const SliderBlock = () => {
   return (
     <div className={s.sliderWrapper}>
       <Slider slide={slide} />
-      <SliderBtns setSlide={setSlide} />
+      <SliderNavigation setSlide={setSlide} />
     </div>
   );
 };

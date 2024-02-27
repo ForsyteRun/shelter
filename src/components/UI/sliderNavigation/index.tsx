@@ -6,7 +6,7 @@ interface IProps {
   setSlide: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SliderBtns: FC<IProps> = ({ setSlide }) => {
+const SliderNavigation: FC<IProps> = ({ setSlide }) => {
   const handleClick = (value: sliderMoveEnum) => {
     value === "next" ? setSlide((prev) => ++prev) : setSlide((prev) => --prev);
   };
@@ -49,4 +49,4 @@ const SliderBtns: FC<IProps> = ({ setSlide }) => {
   );
 };
 
-export default SliderBtns;
+export default SliderNavigation;

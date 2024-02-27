@@ -7,6 +7,16 @@ export interface IHeaderNavLink {
 export interface ISliderData {
   title: sliderTitleEnum;
   path: string;
+  disc: string;
+  type: string;
+  info: ISliderDataInfo;
+}
+
+interface ISliderDataInfo {
+  age: number;
+  inoculations: string;
+  diseases: string;
+  parasites: string;
 }
 export interface IHelpData extends Omit<ISliderData, "title"> {
   title: helpEnum;
