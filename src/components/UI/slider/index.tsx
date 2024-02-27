@@ -3,6 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { sliderData } from "@/db/slider";
 import { Card } from "@/components/layout";
+import { ISliderData } from "@/types/interfaces";
 
 interface IProps {
   slide: number;
@@ -37,12 +38,15 @@ const Slider: FC<IProps> = ({ slide }) => {
 
   return (
     <div ref={ref} className="keen-slider">
-      {sliderData.map(({ path, title }) => (
+      {sliderData.map(({ path, title, type, disc, info }: ISliderData) => (
         <Card
           path={path}
           title={title}
-          key={title}
+          type={type}
+          disc={disc}
+          info={info}
           styles="keen-slider__slide"
+          key={title}
         />
       ))}
     </div>
