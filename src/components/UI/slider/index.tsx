@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { sliderData } from "@/db/slider";
 import { Card } from "@/components/layout";
 import { ISliderData } from "@/types/interfaces";
+import { Modal } from "..";
 
 interface IProps {
   slide: number;
@@ -11,6 +12,8 @@ interface IProps {
 
 const Slider: FC<IProps> = ({ slide }) => {
   const [moveSlide, setMoveSlide] = useState(slide);
+  const [isModal, setIsModal] = useState(false);
+
   const [ref, slider] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
       "(min-width: 1180px)": {
@@ -39,15 +42,22 @@ const Slider: FC<IProps> = ({ slide }) => {
   return (
     <div ref={ref} className="keen-slider">
       {sliderData.map(({ path, title, type, disc, info }: ISliderData) => (
-        <Card
-          path={path}
-          title={title}
-          type={type}
-          disc={disc}
-          info={info}
-          styles="keen-slider__slide"
-          key={title}
-        />
+        <>
+          <Card
+            path={path}
+            title={title}
+            type={type}
+            disc={disc}
+            info={info}
+            styles="keen-slider__slide"
+            callback={setIsModal}
+            isModal={isModal}
+            key={title}
+          />
+          {isModal && (
+            <Modal title={title} type={type} disc={disc} info={info} />
+          )}
+        </>
       ))}
     </div>
   );
