@@ -1,22 +1,17 @@
 import {
   About,
-  BackgroundWrapper,
   Donation,
-  Header,
   Help,
+  Introduce,
   OurFriends,
-  Present,
 } from "@/components/layout";
 
 const MainPage = () => {
   return (
     <>
-      <BackgroundWrapper>
-        <Header />
-        <Present />
-      </BackgroundWrapper>
+      <Introduce />
       <About />
-      <div className="wrapper">
+      <div className="wrapper" id="pets">
         <OurFriends />
       </div>
       <Help />

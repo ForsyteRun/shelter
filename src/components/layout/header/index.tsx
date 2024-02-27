@@ -1,15 +1,22 @@
+import { Burger, Nav } from "@/components/UI";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import s from "./styles.module.scss";
-import { Nav } from "@/components/UI";
 
-const Header = () => {
+interface Props {
+  open: boolean;
+  handleClick: () => void;
+}
+
+const Header: FC<Props> = ({ open, handleClick }) => {
   return (
     <header className={s.header}>
       <div className={s.logo}>
         <Link to="/">Cozy House</Link>
         <span className={s.subLogo}>Shelter for pets in Boston</span>
       </div>
-      <Nav />
+      <Nav open={open} />
+      <Burger handleClick={handleClick} open={open} />
     </header>
   );
 };
