@@ -18,16 +18,24 @@ const Modal: FC<Props> = ({ data, callback }) => {
   return (
     <div className={s.modalContainer}>
       <div className={s.modalContent}>
-        {disc}
         <div className={s.body}>
           <img src={path} alt="pet-modal" />
+          <div className={s.bodyContent}>
+            <h2>{title}</h2>
+            <h3>{type}</h3>
+            <h4>{disc}</h4>
+            <ul>
+              {Object.entries(info).map(([key, value]) => (
+                <li key={key} className={s.list}>
+                  <strong>{key}:</strong> {value}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <img
-          src={vector}
-          alt="close-modal"
-          className={s.close}
-          onClick={handleClick}
-        />
+        <div className={s.close} onClick={handleClick}>
+          <img src={vector} alt="close-modal" />
+        </div>
       </div>
     </div>
   );

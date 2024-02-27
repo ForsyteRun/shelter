@@ -13,10 +13,10 @@ export interface ISliderData {
 }
 
 interface ISliderDataInfo {
-  age: number;
-  inoculations: string;
-  diseases: string;
-  parasites: string;
+  Age: string;
+  Inoculations: string;
+  Diseases: string;
+  Parasites: string;
 }
 export interface IHelpData extends Omit<ISliderData, "title"> {
   title: helpEnum;
