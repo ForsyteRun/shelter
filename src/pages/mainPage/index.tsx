@@ -11,7 +11,7 @@ const MainPage = () => {
     <>
       <Introduce />
       <About />
-      <div className="wrapper" id="pets">
+      <div className="wrapper">
         <OurFriends />
       </div>
       <Help />

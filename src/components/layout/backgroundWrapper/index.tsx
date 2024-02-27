@@ -13,7 +13,7 @@ const BackgroundWrapper: FC<BackgroundWrapperProps> = ({
   const handleClickModal = (event: MouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLDivElement;
 
-    if (!target.className.includes("active")) {
+    if (!target.className.includes("active") && innerWidth < 730) {
       handleClick();
     }
   };

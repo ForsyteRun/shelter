@@ -1,10 +1,7 @@
 import { headerNavLinks } from "@/db/navLinks";
-import { Link } from "react-router-dom";
-import s from "./styles.module.scss";
-import { useCallback, useState } from "react";
 import cn from "classnames";
-import { Burger } from "@/components/UI";
 import { FC } from "react";
+import s from "./styles.module.scss";
 
 interface IProps {
   open: boolean;

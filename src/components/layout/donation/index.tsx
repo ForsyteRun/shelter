@@ -5,7 +5,7 @@ import { card } from "@/assets/icons";
 
 const Donation = () => {
   return (
-    <div className={cn("container", s.container)}>
+    <div className={cn("container", s.container)} id="help">
       <div className={s.imageWrapper}>
         <img src={donation} alt="donation-dog" />
       </div>

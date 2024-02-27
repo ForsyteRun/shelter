@@ -11,6 +11,7 @@ const Introduce = () => {
       ? (document.body.style.overflow = "scroll")
       : (document.body.style.overflow = "hidden");
   }, [open]);
+
   return (
     <BackgroundWrapper handleClick={handleClick}>
       <Header open={open} handleClick={handleClick} />
