@@ -1,9 +1,9 @@
 import cn from "classnames";
-import { FC } from "react";
+import { FC, MouseEvent } from "react";
 import s from "./styles.module.scss";
 
 interface PropsType {
-  handleClick: (value: boolean) => void;
+  handleClick: (event: MouseEvent<HTMLDivElement>) => void;
   open: boolean;
 }
 
@@ -11,8 +11,8 @@ const Burger: FC<PropsType> = ({ handleClick, open }) => {
   return (
     <>
       <div
-        className={cn(s.container, { [s.active]: open })}
-        onClick={() => handleClick(!open)}
+        className={cn(s.burgerContainer, { [s.active]: open })}
+        onClick={(e) => handleClick(e)}
       >
         <span></span>
         <span></span>

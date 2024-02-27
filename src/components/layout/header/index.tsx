@@ -1,11 +1,11 @@
 import { Burger, Nav } from "@/components/UI";
-import { FC } from "react";
+import { FC, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import s from "./styles.module.scss";
 
 interface Props {
   open: boolean;
-  handleClick: () => void;
+  handleClick: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
 const Header: FC<Props> = ({ open, handleClick }) => {
