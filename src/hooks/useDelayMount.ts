@@ -3,21 +3,30 @@ import { useEffect, useState } from "react";
 
 const useDelayMount = (delayTime = 300) => {
   const [isOpen, setIsOpen] = useState(false);
+  // const [isClose, setIsClose] = useState(false);
   const [modalData, setModalData] = useState<ISliderData | null>(null);
 
   useEffect(() => {
     let timeoutId: number;
 
-    if (modalData && !isOpen) {
+    if (modalData) {
       timeoutId = setTimeout(() => setIsOpen(true), delayTime);
-    } else if (!modalData && isOpen) {
-      timeoutId = setTimeout(() => setIsOpen(false), delayTime);
-      timeoutId = setTimeout(() => setIsOpen(false), delayTime);
+    } else {
+      setIsOpen(false);
     }
-    return () => clearTimeout(timeoutId);
-  }, [modalData, delayTime, isOpen]);
 
-  return { isOpen, modalData, setModalData };
+    return () => clearTimeout(timeoutId);
+  }, [modalData]);
+
+  // useEffect(() => {
+  //   // let timeoutId: number;
+  //   // if (!isOpen) {
+  //   //   timeoutId = setTimeout(() => setModalData(null), delayTime);
+  //   // }
+  //   // return () => clearTimeout(timeoutId);
+  // }, [isOpen]);
+
+  return { isOpen, modalData, setModalData, setIsOpen };
 };
 
 export default useDelayMount;

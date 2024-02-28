@@ -2,7 +2,7 @@ import { Card } from "@/components/layout";
 import { sliderData } from "@/db/slider";
 import { ISliderData } from "@/types/interfaces";
 import cn from "classnames";
-import { Dispatch, forwardRef, SetStateAction, memo } from "react";
+import { Dispatch, forwardRef, SetStateAction } from "react";
 import s from "./styles.module.scss";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SliderCards = forwardRef<HTMLDivElement, Props>(
-  ({ setModalData, modalData }, ref) => {
+  ({ modalData, setModalData }, ref) => {
     return (
       <div
         ref={ref}

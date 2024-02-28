@@ -46,7 +46,7 @@ const Slider: FC<IProps> = ({ slide }) => {
         setModalData={setModalData}
       />
       {modalData && (
-        <Modal data={modalData} callback={setModalData} isOpen={isOpen} />
+        <Modal data={modalData} isOpen={isOpen} callback={setModalData} />
       )}
     </>
   );

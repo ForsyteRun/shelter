@@ -20,7 +20,7 @@ interface Props {
   callback: Dispatch<SetStateAction<ISliderData | null>>;
 }
 
-const Modal: FC<Props> = ({ data, callback, isOpen }) => {
+const Modal: FC<Props> = ({ data, isOpen, callback }) => {
   if (!data) return;
 
   const { path } = data;
@@ -50,8 +50,8 @@ const Modal: FC<Props> = ({ data, callback, isOpen }) => {
     <div ref={ref} onClick={handleClick} className={s.modalContainer}>
       <div
         className={cn(s.modalContent, {
-          [s.mount]: isOpen,
           // [s.unMmount]: !isOpen,
+          [s.mount]: isOpen,
         })}
       >
         <div className={s.body}>
