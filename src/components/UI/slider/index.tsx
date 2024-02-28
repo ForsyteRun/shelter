@@ -1,12 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import useDelayMount from "@/hooks/useDelayMount";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { sliderData } from "@/db/slider";
-import { Card } from "@/components/layout";
-import { ISliderData } from "@/types/interfaces";
+import { FC, useEffect, useState } from "react";
 import { Modal } from "..";
-import cn from "classnames";
-import s from "./styles.module.scss";
+import SliderCards from "./sliderCards";
 
 interface IProps {
   slide: number;
@@ -14,7 +11,7 @@ interface IProps {
 
 const Slider: FC<IProps> = ({ slide }) => {
   const [moveSlide, setMoveSlide] = useState(slide);
-  const [modalData, setModalData] = useState<ISliderData | null>(null);
+  const { modalData, isOpen, setModalData } = useDelayMount();
 
   const [ref, slider] = useKeenSlider<HTMLDivElement>({
     breakpoints: {
@@ -43,20 +40,14 @@ const Slider: FC<IProps> = ({ slide }) => {
 
   return (
     <>
-      <div
+      <SliderCards
         ref={ref}
-        className={cn("keen-slider", { [s.disable]: !!modalData })}
-      >
-        {sliderData.map((data: ISliderData) => (
-          <Card
-            data={data}
-            styles="keen-slider__slide"
-            callback={setModalData}
-            key={data.title}
-          />
-        ))}
-      </div>
-      {modalData && <Modal data={modalData} callback={setModalData} />}
+        modalData={modalData}
+        setModalData={setModalData}
+      />
+      {modalData && (
+        <Modal data={modalData} callback={setModalData} isOpen={isOpen} />
+      )}
     </>
   );
 };

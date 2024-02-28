@@ -12,13 +12,17 @@ import {
 import ModalContent from "./modalContent";
 import s from "./styles.module.scss";
 import { disableBody } from "@/utils/disableBody";
+import cn from "classnames";
 
 interface Props {
-  data: ISliderData;
+  data: ISliderData | null;
+  isOpen: boolean;
   callback: Dispatch<SetStateAction<ISliderData | null>>;
 }
 
-const Modal: FC<Props> = ({ data, callback }) => {
+const Modal: FC<Props> = ({ data, callback, isOpen }) => {
+  if (!data) return;
+
   const { path } = data;
 
   const ref = useRef(null);
@@ -44,7 +48,12 @@ const Modal: FC<Props> = ({ data, callback }) => {
 
   return (
     <div ref={ref} onClick={handleClick} className={s.modalContainer}>
-      <div className={s.modalContent}>
+      <div
+        className={cn(s.modalContent, {
+          [s.mount]: isOpen,
+          // [s.unMmount]: !isOpen,
+        })}
+      >
         <div className={s.body}>
           <img src={path} alt="pet-modal" />
           <ModalContent data={data} />

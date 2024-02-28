@@ -1,7 +1,7 @@
 import { Button } from "@/components/UI";
 import { ISliderData } from "@/types/interfaces";
 import cn from "classnames";
-import { Dispatch, FC, SetStateAction, useCallback } from "react";
+import { Dispatch, FC, SetStateAction, memo, useCallback } from "react";
 import s from "./styles.module.scss";
 
 interface PropsType {
@@ -10,7 +10,7 @@ interface PropsType {
   callback: Dispatch<SetStateAction<ISliderData | null>>;
 }
 
-const Card: FC<PropsType> = ({ data, styles, callback }) => {
+const Card: FC<PropsType> = memo(({ data, styles, callback }) => {
   const { title, path } = data;
 
   const handleClick = useCallback(() => {
@@ -28,6 +28,6 @@ const Card: FC<PropsType> = ({ data, styles, callback }) => {
       />
     </div>
   );
-};
+});
 
 export default Card;

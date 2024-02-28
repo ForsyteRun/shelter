@@ -13,7 +13,7 @@
   max-width: 49vw;
   background-color: $color-light-s;
   position: relative;
-  top: 50%;
+  top: -100%;
   left: 50%;
   border-radius: 0.9rem;
   transform: translate(-50%, -50%);
@@ -35,3 +35,29 @@
     border-radius: 0.9rem;
   }
 }
+
+.mount {
+  animation: mount 0.3s forwards;
+}
+
+// .unMount {
+//   animation: unMount 1s forwards;
+// }
+
+@keyframes mount {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+// @keyframes unMount {
+//   0% {
+//     top: 50%;
+//   }
+//   100% {
+//     top: 0;
+//   }
+// }
