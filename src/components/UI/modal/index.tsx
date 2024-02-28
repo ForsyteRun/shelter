@@ -1,6 +1,14 @@
 import { vector } from "@/assets/icons";
 import { ISliderData } from "@/types/interfaces";
-import { Dispatch, FC, SetStateAction, useEffect } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useRef,
+  MouseEvent,
+  useCallback,
+} from "react";
 import ModalContent from "./modalContent";
 import s from "./styles.module.scss";
 import { disableBody } from "@/utils/disableBody";
@@ -13,9 +21,19 @@ interface Props {
 const Modal: FC<Props> = ({ data, callback }) => {
   const { path } = data;
 
-  const handleClick = () => {
-    callback(null);
-  };
+  const ref = useRef(null);
+
+  const handleClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      const target = event.target as HTMLDivElement;
+      const currentTarget = event.currentTarget as HTMLDivElement;
+
+      if (target === ref.current || currentTarget.className.includes("close")) {
+        callback(null);
+      }
+    },
+    [callback, ref]
+  );
 
   useEffect(() => {
     disableBody(true);
@@ -25,7 +43,7 @@ const Modal: FC<Props> = ({ data, callback }) => {
   }, []);
 
   return (
-    <div className={s.modalContainer}>
+    <div ref={ref} onClick={handleClick} className={s.modalContainer}>
       <div className={s.modalContent}>
         <div className={s.body}>
           <img src={path} alt="pet-modal" />
