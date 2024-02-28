@@ -5,6 +5,8 @@ import { sliderData } from "@/db/slider";
 import { Card } from "@/components/layout";
 import { ISliderData } from "@/types/interfaces";
 import { Modal } from "..";
+import cn from "classnames";
+import s from "./styles.module.scss";
 
 interface IProps {
   slide: number;
@@ -40,19 +42,22 @@ const Slider: FC<IProps> = ({ slide }) => {
   }, [slide]);
 
   return (
-    <div ref={ref} className="keen-slider">
-      {sliderData.map((data: ISliderData) => (
-        <>
+    <>
+      <div
+        ref={ref}
+        className={cn("keen-slider", { [s.disable]: !!modalData })}
+      >
+        {sliderData.map((data: ISliderData) => (
           <Card
             data={data}
             styles="keen-slider__slide"
             callback={setModalData}
             key={data.title}
           />
-        </>
-      ))}
+        ))}
+      </div>
       {modalData && <Modal data={modalData} callback={setModalData} />}
-    </div>
+    </>
   );
 };
 
