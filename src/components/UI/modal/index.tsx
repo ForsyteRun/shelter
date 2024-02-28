@@ -1,8 +1,9 @@
 import { vector } from "@/assets/icons";
 import { ISliderData } from "@/types/interfaces";
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import ModalContent from "./modalContent";
 import s from "./styles.module.scss";
+import { disableBody } from "@/utils/disableBody";
 
 interface Props {
   data: ISliderData;
@@ -15,6 +16,13 @@ const Modal: FC<Props> = ({ data, callback }) => {
   const handleClick = () => {
     callback(null);
   };
+
+  useEffect(() => {
+    disableBody(true);
+    return () => {
+      disableBody(false);
+    };
+  }, []);
 
   return (
     <div className={s.modalContainer}>

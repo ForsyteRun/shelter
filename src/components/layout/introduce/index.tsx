@@ -1,5 +1,6 @@
+import { disableBody } from "@/utils/disableBody";
+import { MouseEvent, useCallback, useEffect, useState } from "react";
 import { BackgroundWrapper, Header, Present } from "..";
-import { useState, useEffect, useCallback, MouseEvent } from "react";
 
 const Introduce = () => {
   const [open, setOpen] = useState(false);
@@ -24,9 +25,7 @@ const Introduce = () => {
   );
 
   useEffect(() => {
-    open
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "scroll");
+    disableBody(open);
   }, [open]);
 
   return (
