@@ -10,13 +10,19 @@
 
 .modalContent {
   position: relative;
-  max-width: 49vw;
+  // max-width: 49vw;
   background-color: $color-light-s;
   position: relative;
   top: -100%;
   left: 50%;
   border-radius: 0.9rem;
   transform: translate(-50%, -50%);
+  @include _1281 {
+    width: 90rem;
+  }
+  @include _1280 {
+    width: max(63rem, 70.3vw);
+  }
   & .close {
     position: absolute;
     right: -4.4rem;
