@@ -10,7 +10,6 @@
 
 .modalContent {
   position: relative;
-  // max-width: 49vw;
   background-color: $color-light-s;
   position: relative;
   top: -100%;
@@ -23,6 +22,9 @@
   @include _1280 {
     width: max(63rem, 70.3vw);
   }
+  @include _730 {
+    width: max(24rem, 86.3vw);
+  }
   & .close {
     position: absolute;
     right: -4.4rem;
@@ -31,6 +33,11 @@
     border-radius: 50%;
     padding: 1.9rem;
     cursor: pointer;
+    @include _730 {
+      right: 0;
+      top: 0;
+      border: none;
+    }
   }
 }
 
@@ -39,6 +46,9 @@
   & img {
     height: 35rem;
     border-radius: 0.9rem;
+    @include _730 {
+      display: none;
+    }
   }
 }
 

@@ -2,18 +2,29 @@
   @include flex(column, space-between, flex-start);
   row-gap: 1rem;
   padding: 3rem;
+  @include _375 {
+    align-items: center;
+  }
   & h2,
   & h3,
   & h4 {
     color: $color-dark;
   }
 
+  & h3 {
+    @include _730 {
+      font-size: max(1.5rem, 2.7vw);
+    }
+  }
   & h4 {
     font-weight: 400;
     line-height: 1;
   }
   & ul {
     padding: 0 1rem;
+    @include _375 {
+      align-self: flex-start;
+    }
     & .list {
       font-size: 1.5rem;
       margin-bottom: 0.4rem;
