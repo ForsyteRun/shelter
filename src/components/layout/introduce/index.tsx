@@ -8,14 +8,15 @@ const Introduce = () => {
   const handleClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
       const target = event.target as HTMLDivElement;
+      const currentTarget = event.currentTarget as HTMLDivElement;
 
       if (innerWidth > 730) return;
 
-      if (target.closest(".burgerContainer")) {
+      if (currentTarget.className.includes("burgerIcon")) {
         setOpen(!open);
       } else if (
         !target.className.includes("menu") &&
-        !target.className.includes("burgerContainer") &&
+        !target.className.includes("burgerIcon") &&
         open
       ) {
         setOpen(false);
