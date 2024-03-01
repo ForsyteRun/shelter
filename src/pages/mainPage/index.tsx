@@ -11,13 +11,9 @@ const MainPage = () => {
     <>
       <Present />
       <About />
-      <div className="wrapper">
-        <OurFriends />
-      </div>
+      <OurFriends />
       <Help />
-      <div className="wrapper">
-        <Donation />
-      </div>
+      <Donation />
     </>
   );
 };

@@ -40,9 +40,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
     <>
       <Header open={open} handleClick={handleClick} />
       {children}
-      <BackgroundWrapper style="footerBackground">
-        <Footer />
-      </BackgroundWrapper>
+      <Footer />
     </>
   );
 };

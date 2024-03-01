@@ -5,7 +5,7 @@ import { IHelpData } from "@/types/interfaces";
 
 const Help = () => {
   return (
-    <div className={cn("container", s.container)}>
+    <section className={cn("container", s.container)}>
       <h2>
         How you can help <div>our shelter</div>
       </h2>
@@ -20,7 +20,7 @@ const Help = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
