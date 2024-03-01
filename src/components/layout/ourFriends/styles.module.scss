@@ -23,12 +23,12 @@
 
 .linkButton {
   margin-top: 5rem;
+  @include _730 {
+    margin-top: 11rem;
+  }
 }
 
 .button {
   background-color: $color-primary;
   border: none;
-  @include _730 {
-    margin-top: 11rem;
-  }
 }
