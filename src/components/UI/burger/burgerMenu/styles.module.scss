@@ -1,3 +1,7 @@
+.container {
+  position: absolute;
+}
+
 .menu {
   position: fixed;
   right: 0;
@@ -13,7 +17,6 @@
 
 .active {
   background-color: blue;
-  position: absolute;
   inset: 0;
   & .menu {
     left: 0;

@@ -9,7 +9,7 @@ interface PropsType {
 
 const BurgerMenu: FC<PropsType> = ({ handleClick, open }) => {
   return (
-    <div className={cn({ [s.active]: open })} onClick={handleClick}>
+    <div className={cn(s.container, { [s.active]: open })} onClick={handleClick}>
       <div className={s.menu}></div>
     </div>
   );

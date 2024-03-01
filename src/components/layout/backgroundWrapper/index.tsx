@@ -1,12 +1,14 @@
 import { FC, PropsWithChildren } from "react";
-import s from "./styles.module.scss";
 
-const BackgroundWrapper: FC<PropsWithChildren<unknown>> = ({ children }) => {
-  return (
-    <div className={s.wrapper}>
-      <div className="container">{children}</div>
-    </div>
-  );
+interface Props {
+  style: string;
+}
+
+const BackgroundWrapper: FC<PropsWithChildren<Props>> = ({
+  children,
+  style,
+}) => {
+  return <div className={style}>{children}</div>;
 };
 
 export default BackgroundWrapper;

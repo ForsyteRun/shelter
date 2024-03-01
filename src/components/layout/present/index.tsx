@@ -7,7 +7,7 @@ import { pathEnum } from "@/types/enum";
 
 const Present = () => {
   return (
-    <section className={s.container}>
+    <section className={cn("container", s.container)}>
       <div className={s.content}>
         <h1>
           Not only people <span>need a house</span>

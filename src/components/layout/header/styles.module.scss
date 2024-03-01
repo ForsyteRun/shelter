@@ -1,12 +1,9 @@
 .header {
   @include flex();
-  padding: 2.5rem 0;
-  @include _730 {
-    padding: 2.5rem 1rem;
-  }
 }
 
 .logo {
+  padding: 2.5rem 0;
   & a {
     display: inline-block;
     font-size: 3.55rem;

@@ -9,4 +9,3 @@ export { default as Help } from "./help";
 export { default as Donation } from "./donation";
 export { default as Footer } from "./footer";
 export { default as FooterInfo } from "./footerInfo";
-export { default as Introduce } from "./introduce";

@@ -1,15 +1,19 @@
 import {
   About,
+  BackgroundWrapper,
   Donation,
   Help,
-  Introduce,
   OurFriends,
+  Present,
 } from "@/components/layout";
+import s from "./styles.module.scss";
 
 const MainPage = () => {
   return (
     <>
-      <Introduce />
+      <BackgroundWrapper style={s.backgroundStyle}>
+        <Present />
+      </BackgroundWrapper>
       <About />
       <div className="wrapper">
         <OurFriends />

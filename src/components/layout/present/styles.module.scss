@@ -1,7 +1,7 @@
 .container {
   @include flex();
   column-gap: 3rem;
-  padding: 6.8rem 0 0;
+  padding-top: 6.8rem;
   @include _890 {
     flex-direction: column;
     row-gap: 6rem;

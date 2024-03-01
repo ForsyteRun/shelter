@@ -2,6 +2,7 @@ import { Nav } from "@/components/UI";
 import { FC, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import s from "./styles.module.scss";
+import cn from "classnames";
 import { BurgerIcon, BurgerMenu } from "@/components/UI/burger";
 
 interface Props {
@@ -11,14 +12,16 @@ interface Props {
 
 const Header: FC<Props> = ({ open, handleClick }) => {
   return (
-    <header className={s.header}>
-      <div className={s.logo}>
-        <Link to="/">Cozy House</Link>
-        <span className={s.subLogo}>Shelter for pets in Boston</span>
+    <header className="headerBackground">
+      <div className={cn("container", s.header)}>
+        <div className={s.logo}>
+          <Link to="/">Cozy House</Link>
+          <span className={s.subLogo}>Shelter for pets in Boston</span>
+        </div>
+        <Nav open={open} />
+        <BurgerIcon handleClick={handleClick} open={open} />
+        <BurgerMenu handleClick={handleClick} open={open} />
       </div>
-      <Nav open={open} />
-      <BurgerIcon handleClick={handleClick} open={open} />
-      <BurgerMenu handleClick={handleClick} open={open} />
     </header>
   );
 };
