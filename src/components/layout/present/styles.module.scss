@@ -1,11 +1,19 @@
+.presentBackground {
+  background: url(noise_lines_transparent@2X),
+    radial-gradient(
+        234.05% 111.8% at 0% 0%,
+        rgb(91, 72, 58),
+        rgb(38, 36, 37) 100%
+      )
+      rgb(33, 31, 32);
+}
+
 .container {
   @include flex();
   column-gap: 3rem;
-  padding-top: 6.8rem;
   @include _890 {
     flex-direction: column;
-    row-gap: 6rem;
-    padding-top: 7.2rem;
+    row-gap: 9rem;
   }
 }
 
@@ -13,10 +21,11 @@
   @include flex(column, flex-start, flex-start);
   row-gap: 4.4rem;
   position: relative;
-  bottom: 4rem;
+  bottom: 1rem;
   @include _890 {
     width: 65%;
     align-items: center;
+    padding-top: 4rem;
   }
   @include _730 {
     width: initial;
@@ -51,9 +60,11 @@
 
 .imgWrapper {
   flex-basis: 133%;
+  padding-top: 6.8rem;
   @include _890 {
     width: 80%;
     align-self: flex-end;
+    padding-top: 0;
   }
   @include _730 {
     width: 87%;
