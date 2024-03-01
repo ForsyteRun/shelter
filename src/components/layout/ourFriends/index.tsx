@@ -13,7 +13,7 @@ const OurFriends = () => {
         <span>are looking for a house</span>
       </h2>
       <SliderBlock />
-      <Link to={pathEnum.FRIIENDS}>
+      <Link to={pathEnum.FRIIENDS} className={s.linkButton}>
         <Button title="Get to know the rest" styles={cn("button", s.button)} />
       </Link>
     </div>
