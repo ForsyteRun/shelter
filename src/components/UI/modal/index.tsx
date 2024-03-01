@@ -15,17 +15,15 @@ import { disableBody } from "@/utils/disableBody";
 import cn from "classnames";
 
 interface Props {
-  data: ISliderData | null;
+  data: ISliderData;
   isOpen: boolean;
   callback: Dispatch<SetStateAction<ISliderData | null>>;
 }
 
 const Modal: FC<Props> = ({ data, isOpen, callback }) => {
-  if (!data) return;
+  const ref = useRef(null);
 
   const { path } = data;
-
-  const ref = useRef(null);
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {

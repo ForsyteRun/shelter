@@ -3,7 +3,7 @@ import { FC } from "react";
 interface Props {
   title: string;
   styles: string;
-  callback: () => void;
+  callback?: () => void;
 }
 
 const Button: FC<Props> = ({ title, styles, callback = () => {} }) => {
