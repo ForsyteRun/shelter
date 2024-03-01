@@ -1,9 +1,9 @@
 import { Nav } from "@/components/UI";
-import { FC, MouseEvent } from "react";
-import { Link } from "react-router-dom";
-import s from "./styles.module.scss";
-import cn from "classnames";
 import { BurgerIcon, BurgerMenu } from "@/components/UI/burger";
+import cn from "classnames";
+import { FC, MouseEvent } from "react";
+import { Link, useLocation } from "react-router-dom";
+import s from "./styles.module.scss";
 
 interface Props {
   open: boolean;
@@ -11,12 +11,26 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ open, handleClick }) => {
+  const location = useLocation();
+
+  const isRootLocation = location.pathname === "/";
+
   return (
-    <header className="headerBackground">
+    <header
+      className={cn({
+        headerBackground: isRootLocation,
+      })}
+    >
       <div className={cn("container", s.header)}>
         <div className={s.logo}>
           <Link to="/">Cozy House</Link>
-          <span className={s.subLogo}>Shelter for pets in Boston</span>
+          <span
+            className={cn(s.subLogo, {
+              lightColor: isRootLocation,
+            })}
+          >
+            Shelter for pets in Boston
+          </span>
         </div>
         <Nav open={open} handleClick={handleClick} />
         <BurgerIcon open={open} handleClick={handleClick} />

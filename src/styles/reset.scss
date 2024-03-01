@@ -51,6 +51,11 @@ a:not([class]) {
 
 a {
   text-decoration: none;
+  color: $color-dark-l;
+}
+
+a:active {
+  color: initial;
 }
 
 /* Упрощаем работу с изображениями */

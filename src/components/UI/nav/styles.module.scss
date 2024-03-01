@@ -24,7 +24,6 @@
     font-family: "Arimo", sans-serif;
     position: relative;
     font-size: 1.5rem;
-    color: $color-light-xl;
     &::after {
       content: "";
       position: absolute;
@@ -46,6 +45,13 @@
     @include _730 {
       font-size: 3.2rem;
     }
+  }
+}
+
+.darkColor {
+  color: $color-dark-l;
+  @include _730 {
+    color: $color-light-xl;
   }
 }
 

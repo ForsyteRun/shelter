@@ -8,8 +8,6 @@ interface PropsType {
 }
 
 const BurgerIcon: FC<PropsType> = ({ open, handleClick }) => {
-  console.log(open);
-
   return (
     <div
       className={cn([s.burgerIcon], {
