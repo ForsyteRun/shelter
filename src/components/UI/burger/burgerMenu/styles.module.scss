@@ -1,5 +1,6 @@
 .container {
   position: absolute;
+  z-index: 10;
 }
 
 .menu {
@@ -16,7 +17,7 @@
 }
 
 .active {
-  background-color: blue;
+  background-color: $color-grey;
   inset: 0;
   & .menu {
     left: 0;

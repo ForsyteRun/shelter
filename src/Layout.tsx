@@ -6,7 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { BackgroundWrapper, Footer, Header } from "./components/layout";
+import { Footer, Header } from "./components/layout";
 import { disableBody } from "./utils/disableBody";
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
