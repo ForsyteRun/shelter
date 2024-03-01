@@ -1,0 +1,41 @@
+.burgerIcon {
+  display: none;
+  order: 1;
+  position: relative;
+  right: 0;
+  width: 3rem;
+  height: 2rem;
+  cursor: pointer;
+  z-index: 11;
+  transition: transform 0.5s ease;
+  &.active {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+  }
+
+  & :first-child,
+  & :last-child,
+  & :nth-child(2) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0.2rem;
+    background-color: $color-primary;
+  }
+
+  & :first-child {
+    top: 0;
+  }
+
+  & :nth-child(2) {
+    top: 40%;
+  }
+
+  & :last-child {
+    top: 80%;
+  }
+
+  @include _730 {
+    display: block;
+  }
+}

@@ -2,22 +2,18 @@ import {
   About,
   Donation,
   Help,
-  Introduce,
   OurFriends,
+  Present,
 } from "@/components/layout";
 
 const MainPage = () => {
   return (
     <>
-      <Introduce />
+      <Present />
       <About />
-      <div className="wrapper">
-        <OurFriends />
-      </div>
+      <OurFriends />
       <Help />
-      <div className="wrapper">
-        <Donation />
-      </div>
+      <Donation />
     </>
   );
 };

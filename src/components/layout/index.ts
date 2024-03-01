@@ -1,5 +1,4 @@
 export { default as Header } from "./header";
-export { default as BackgroundWrapper } from "./backgroundWrapper";
 export { default as Present } from "./present";
 export { default as About } from "./about";
 export { default as OurFriends } from "./ourFriends";
@@ -9,4 +8,3 @@ export { default as Help } from "./help";
 export { default as Donation } from "./donation";
 export { default as Footer } from "./footer";
 export { default as FooterInfo } from "./footerInfo";
-export { default as Introduce } from "./introduce";

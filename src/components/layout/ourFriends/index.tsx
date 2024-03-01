@@ -7,16 +7,21 @@ import { pathEnum } from "@/types/enum";
 
 const OurFriends = () => {
   return (
-    <div className={cn("container", s.container)} id="pets">
-      <h2 className={s.title}>
-        Our friends who
-        <span>are looking for a house</span>
-      </h2>
-      <SliderBlock />
-      <Link to={pathEnum.FRIIENDS} className={s.linkButton}>
-        <Button title="Get to know the rest" styles={cn("button", s.button)} />
-      </Link>
-    </div>
+    <section className="wrapper" id="pets">
+      <div className={cn("container", s.container)}>
+        <h2 className={s.title}>
+          Our friends who
+          <span>are looking for a house</span>
+        </h2>
+        <SliderBlock />
+        <Link to={pathEnum.FRIIENDS} className={s.linkButton}>
+          <Button
+            title="Get to know the rest"
+            styles={cn("button", s.button)}
+          />
+        </Link>
+      </div>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ import s from "./styles.module.scss";
 
 const About = () => {
   return (
-    <div className={cn("container", s.container)} id="about">
+    <section className={cn("container", s.container)} id="about">
       <div className={s.imageWrapper}>
         <img src={about} alt="dog" />
       </div>
@@ -25,7 +25,7 @@ const About = () => {
           hardly ever leave them alone.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

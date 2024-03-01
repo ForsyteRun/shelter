@@ -1,9 +1,13 @@
 .container {
   @include flex(row, space-between, flex-start);
-  padding: 4rem 0 0 0;
+  padding: 4rem 4rem 0;
   @include _1020 {
     flex-direction: column;
     padding-top: 2rem;
+  }
+  @include _730 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
