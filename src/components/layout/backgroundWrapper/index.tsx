@@ -1,16 +1,9 @@
-import { FC, MouseEvent, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import s from "./styles.module.scss";
 
-interface BackgroundWrapperProps {
-  handleClick: (event: MouseEvent<HTMLDivElement>) => void;
-}
-
-const BackgroundWrapper: FC<PropsWithChildren<BackgroundWrapperProps>> = ({
-  children,
-  handleClick,
-}) => {
+const BackgroundWrapper: FC<PropsWithChildren<unknown>> = ({ children }) => {
   return (
-    <div className={s.wrapper} onClick={handleClick}>
+    <div className={s.wrapper}>
       <div className="container">{children}</div>
     </div>
   );

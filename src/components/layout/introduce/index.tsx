@@ -29,7 +29,7 @@ const Introduce = () => {
   }, [open]);
 
   return (
-    <BackgroundWrapper handleClick={handleClick}>
+    <BackgroundWrapper>
       <Header open={open} handleClick={handleClick} />
       <Present />
     </BackgroundWrapper>
