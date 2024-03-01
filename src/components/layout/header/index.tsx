@@ -7,7 +7,7 @@ import { BurgerIcon, BurgerMenu } from "@/components/UI/burger";
 
 interface Props {
   open: boolean;
-  handleClick: (event: MouseEvent<HTMLDivElement>) => void;
+  handleClick: (event: MouseEvent<HTMLElement>) => void;
 }
 
 const Header: FC<Props> = ({ open, handleClick }) => {
@@ -18,9 +18,9 @@ const Header: FC<Props> = ({ open, handleClick }) => {
           <Link to="/">Cozy House</Link>
           <span className={s.subLogo}>Shelter for pets in Boston</span>
         </div>
-        <Nav open={open} />
-        <BurgerIcon handleClick={handleClick} open={open} />
-        <BurgerMenu handleClick={handleClick} open={open} />
+        <Nav open={open} handleClick={handleClick} />
+        <BurgerIcon open={open} handleClick={handleClick} />
+        <BurgerMenu open={open} handleClick={handleClick} />
       </div>
     </header>
   );
