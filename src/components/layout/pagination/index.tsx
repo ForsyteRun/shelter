@@ -1,7 +1,6 @@
-import PaginationCards from "./paginationCards";
-import PaginationNavigation from "./paginationNavigation";
-import s from "./styles.module.scss";
 import cn from "classnames";
+import PaginationContent from "./paginationContent";
+import s from "./styles.module.scss";
 
 const Pagination = () => {
   return (
@@ -10,8 +9,7 @@ const Pagination = () => {
         <h2>
           Our friends who <div>are looking for a house</div>
         </h2>
-        <PaginationCards />
-        <PaginationNavigation />
+        <PaginationContent />
       </div>
     </section>
   );

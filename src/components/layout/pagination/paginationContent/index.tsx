@@ -3,17 +3,21 @@ import { sliderData } from "@/db/slider";
 import useDelayMount from "@/hooks/useDelayMount";
 import { ISliderData } from "@/types/interfaces";
 import "keen-slider/keen-slider.min.css";
+import { useCallback, useEffect, useState } from "react";
 import { Card } from "../..";
+import PaginationNavigation from "../paginationNavigation";
 import s from "./styles.module.scss";
-import { useEffect, useCallback } from "react";
 
-const PaginationCards = () => {
+const PaginationContent = () => {
   const { modalData, isOpen, setModalData } = useDelayMount();
-  let modifyData: ISliderData[] = [];
+  const [data, setData] = useState<ISliderData[]>([]);
 
   const handlePaginationData = useCallback(() => {
-    const data = Array(3).fill(sliderData).flat();
-    modifyData = [...modifyData, ...data];
+    const modifyData = Array.from({ length: 3 }, () => [...sliderData]).flatMap(
+      (shuffledData) => shuffledData.sort(() => Math.random() - 0.5)
+    );
+
+    setData(modifyData);
   }, [sliderData]);
 
   useEffect(() => {
@@ -23,15 +27,11 @@ const PaginationCards = () => {
   return (
     <>
       <div className={s.cardsContainer}>
-        {sliderData.map((data: ISliderData) => (
-          <Card
-            data={data}
-            styles=""
-            callback={setModalData}
-            key={data.title}
-          />
+        {data.slice(0, 8).map((data: ISliderData, index) => (
+          <Card data={data} styles="" callback={setModalData} key={index} />
         ))}
       </div>
+      <PaginationNavigation />
       {modalData && (
         <Modal data={modalData} isOpen={isOpen} callback={setModalData} />
       )}
@@ -39,4 +39,4 @@ const PaginationCards = () => {
   );
 };
 
-export default PaginationCards;
+export default PaginationContent;
