@@ -9,6 +9,7 @@
 }
 
 .container {
+  @include flex(column, space-between center);
   padding-top: 8rem;
   padding-bottom: 10rem;
 }
