@@ -1,5 +1,7 @@
+import s from "./styles.module.scss";
+
 const Pagination = () => {
-  return <section>Pagination</section>;
+  return <section className={s.container}>Pagination</section>;
 };
 
 export default Pagination;
