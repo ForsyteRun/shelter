@@ -1,0 +1,5 @@
+.cardsContainer {
+  @include flex();
+  flex-wrap: wrap;
+  row-gap: 2.8rem;
+}

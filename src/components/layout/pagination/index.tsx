@@ -6,7 +6,9 @@ const Pagination = () => {
   return (
     <section className={s.wrapper}>
       <div className={cn("container", s.container)}>
-        <h2>Our friends who are looking for a house</h2>
+        <h2>
+          Our friends who <div>are looking for a house</div>
+        </h2>
         <PaginationCards />
       </div>
     </section>
