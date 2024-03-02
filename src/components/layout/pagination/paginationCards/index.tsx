@@ -5,9 +5,20 @@ import { ISliderData } from "@/types/interfaces";
 import "keen-slider/keen-slider.min.css";
 import { Card } from "../..";
 import s from "./styles.module.scss";
+import { useEffect, useCallback } from "react";
 
 const PaginationCards = () => {
   const { modalData, isOpen, setModalData } = useDelayMount();
+  let modifyData: ISliderData[] = [];
+
+  const handlePaginationData = useCallback(() => {
+    const data = Array(3).fill(sliderData).flat();
+    modifyData = [...modifyData, ...data];
+  }, [sliderData]);
+
+  useEffect(() => {
+    handlePaginationData();
+  }, []);
 
   return (
     <>

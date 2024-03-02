@@ -53,7 +53,7 @@
 .body {
   @include flex(row, space-between, flex-start);
   & img {
-    height: 35rem;
+    height: 40rem;
     border-radius: 0.9rem;
     @include _730 {
       display: none;
