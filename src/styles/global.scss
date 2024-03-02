@@ -99,3 +99,8 @@ h5 {
 .lightColor {
   color: $color-light-xl;
 }
+
+.friendsContainer {
+  display: flex;
+  flex-direction: column;
+}

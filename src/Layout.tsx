@@ -8,9 +8,14 @@ import {
 } from "react";
 import { Footer, Header } from "./components/layout";
 import { disableBody } from "./utils/disableBody";
+import cn from "classnames";
+import { useLocation } from "react-router-dom";
 
 const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const isMainPage = location.pathname === "/";
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLElement>) => {
@@ -37,11 +42,11 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
   }, [open]);
 
   return (
-    <>
+    <div className={cn({ friendsContainer: !isMainPage })}>
       <Header open={open} handleClick={handleClick} />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 

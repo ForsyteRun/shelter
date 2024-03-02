@@ -1,5 +1,7 @@
+import { Pagination } from "@/components/layout";
+
 const FriendsPage = () => {
-  return <div>FriendsPage</div>;
+  return <Pagination />;
 };
 
 export default FriendsPage;
