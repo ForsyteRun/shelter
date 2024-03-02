@@ -25,6 +25,13 @@ const Modal: FC<Props> = ({ data, isOpen, callback }) => {
 
   const { path } = data;
 
+  useEffect(() => {
+    document.body.style.paddingRight = "1.7rem";
+    return () => {
+      document.body.style.paddingRight = "0";
+    };
+  }, []);
+
   const handleClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
       const target = event.target as HTMLDivElement;
