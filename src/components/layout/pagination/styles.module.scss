@@ -1,3 +1,12 @@
-.container {
+.wrapper {
   flex: 1;
+  background-color: $color-light-l;
+  & h2 {
+    text-align: center;
+  }
+}
+
+.container {
+  padding-top: 8rem;
+  padding-bottom: 10rem;
 }
