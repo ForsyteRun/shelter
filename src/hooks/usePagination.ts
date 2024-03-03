@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 const usePagination = () => {
   const [data, setData] = useState<ISliderData[][] | null>(null);
   const [pageNumber, setPageNumber] = useState(0);
+  const [pageCount, setPageCount] = useState(0);
 
   const handlePaginationData = useCallback(() => {
     const modifyData = Array.from({ length: 3 }, () => [...sliderData]).map(
@@ -12,13 +13,14 @@ const usePagination = () => {
     );
 
     setData(modifyData);
+    setPageCount(modifyData.length);
   }, [sliderData]);
 
   useEffect(() => {
     handlePaginationData();
-  }, []);
+  }, [sliderData]);
 
-  return { data, pageNumber, setPageNumber };
+  return { data, pageNumber, pageCount, setPageNumber };
 };
 
 export default usePagination;

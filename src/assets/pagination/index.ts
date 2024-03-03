@@ -1,13 +1,6 @@
-import buttonLeft from "./buttonLeft.png";
-import buttonLeftStart from "./buttonLeftStart.png";
-import buttonRight from "./buttonRight.png";
-import buttonRightEnd from "./buttonRightEnd.png";
-import buttonNumber from "./buttonNumber.png";
+import doubleArrowLeft from "./doubleArrowLeft.svg";
+import doubleArrowRight from "./doubleArrowRight.svg";
+import singleArrowLeft from "./singleArrowLeft.svg";
+import singleArrowRight from "./singleArrowRight.svg";
 
-export {
-  buttonLeft,
-  buttonLeftStart,
-  buttonRight,
-  buttonRightEnd,
-  buttonNumber,
-};
+export { doubleArrowLeft, doubleArrowRight, singleArrowLeft, singleArrowRight };

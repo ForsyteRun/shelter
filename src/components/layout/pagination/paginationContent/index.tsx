@@ -8,7 +8,7 @@ import s from "./styles.module.scss";
 
 const PaginationContent = () => {
   const { modalData, isOpen, setModalData } = useDelayMount();
-  const { data, pageNumber, setPageNumber } = usePagination();
+  const { data, pageNumber, pageCount, setPageNumber } = usePagination();
 
   return (
     <>
@@ -18,7 +18,11 @@ const PaginationContent = () => {
             <Card data={data} styles="" callback={setModalData} key={index} />
           ))}
       </div>
-      <PaginationNavigation setPageNumber={setPageNumber} />
+      <PaginationNavigation
+        pageCount={pageCount}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
       {modalData && (
         <Modal data={modalData} isOpen={isOpen} callback={setModalData} />
       )}

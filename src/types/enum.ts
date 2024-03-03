@@ -34,3 +34,10 @@ export const enum helpEnum {
   COLLARS = "Collars / leashes",
   SLEEPING = "Sleeping areas",
 }
+
+export const enum paginationDirection {
+  PLUS = "plus",
+  MINUS = "minus",
+  START = "start",
+  END = "end",
+}

@@ -1,0 +1,17 @@
+.container {
+  @include flex(row, center);
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  border: 2.5px solid $color-primary;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.disable {
+  filter: grayscale(1);
+  pointer-events: none;
+  & img {
+    filter: invert(1);
+  }
+}
