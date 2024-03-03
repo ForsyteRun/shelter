@@ -57,6 +57,7 @@ const PaginationNavigation: FC<IProps> = memo(
         <PaginationPageNumberBtns
           pageCount={pageCount}
           pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
         />
 
         <PaginationNavigationBtn

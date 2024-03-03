@@ -1,11 +1,17 @@
 import { PaginationNavigationBtn } from "@/components/UI";
-import { Fragment, FC } from "react";
+import { Fragment, FC, Dispatch, SetStateAction } from "react";
 
 interface IProps {
   pageCount: number;
   pageNumber: number;
+  setPageNumber: Dispatch<SetStateAction<number>>;
 }
-const PaginationPageNumberBtns: FC<IProps> = ({ pageCount, pageNumber }) => {
+
+const PaginationPageNumberBtns: FC<IProps> = ({
+  pageCount,
+  pageNumber,
+  setPageNumber,
+}) => {
   return (
     <>
       {Array.from({ length: pageCount }).map((_, index) => (
@@ -13,6 +19,7 @@ const PaginationPageNumberBtns: FC<IProps> = ({ pageCount, pageNumber }) => {
           <PaginationNavigationBtn
             title={index + 1}
             isSelected={pageNumber === index}
+            callback={() => setPageNumber(index)}
           />
         </Fragment>
       ))}
