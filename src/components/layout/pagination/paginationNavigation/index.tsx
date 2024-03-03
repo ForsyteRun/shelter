@@ -4,11 +4,11 @@ import {
   singleArrowLeft,
   singleArrowRight,
 } from "@/assets/pagination";
-import { Dispatch, FC, SetStateAction, memo, Fragment, useEffect } from "react";
-import s from "./styles.module.scss";
 import { PaginationNavigationBtn } from "@/components/UI";
 import { paginationDirection } from "@/types/enum";
+import { Dispatch, FC, SetStateAction, memo } from "react";
 import PaginationPageNumberBtns from "../paginationPageNumberBtns";
+import s from "./styles.module.scss";
 
 interface IProps {
   pageCount: number;
@@ -54,7 +54,10 @@ const PaginationNavigation: FC<IProps> = memo(
           callback={() => handlePageNumber(paginationDirection.MINUS)}
         />
 
-        <PaginationPageNumberBtns pageCount={pageCount} />
+        <PaginationPageNumberBtns
+          pageCount={pageCount}
+          pageNumber={pageNumber}
+        />
 
         <PaginationNavigationBtn
           title={singleArrowRight}

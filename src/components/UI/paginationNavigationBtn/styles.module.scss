@@ -6,6 +6,9 @@
   border: 2.5px solid $color-primary;
   padding: 0 1rem;
   cursor: pointer;
+  & span {
+    font-size: 2rem;
+  }
 }
 
 .disable {
@@ -14,4 +17,8 @@
   & img {
     filter: invert(1);
   }
+}
+
+.selected {
+  background: $color-primary;
 }
