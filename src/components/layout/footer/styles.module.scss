@@ -12,7 +12,7 @@
 }
 
 .contentContainer {
-  @include flex(row, space-between, flex-start);
+  @include flex(row, space-between, flex-end);
   width: 67%;
   margin-bottom: 4rem;
   @include _1020 {
@@ -45,10 +45,6 @@
   }
   & div {
     column-gap: 2rem;
-    & h3 {
-      color: $color-primary;
-      font-weight: 400;
-    }
   }
 }
 
@@ -62,19 +58,18 @@
   }
 
   & div {
-    @include flex(row, space-between, flex-start);
-    width: 64%;
+    @include flex(row, flex-start);
     @include _730 {
       justify-content: flex-start;
     }
-    & h3 {
+    & a {
       white-space: nowrap;
     }
   }
 }
 
 .contentRight {
-  row-gap: 3.2rem;
+  row-gap: 3.7rem;
   margin-left: -2rem;
   @include _1020 {
     flex-basis: 48%;
