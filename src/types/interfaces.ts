@@ -20,8 +20,9 @@ interface ISliderDataInfo {
   Diseases: string;
   Parasites: string;
 }
-export interface IHelpData extends Omit<ISliderData, "title"> {
+export interface IHelpData {
   title: helpEnum;
+  path: string;
 }
 
 export interface IFooterInfo {
