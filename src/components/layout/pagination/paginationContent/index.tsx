@@ -1,14 +1,33 @@
 import { Modal } from "@/components/UI";
-import { usePagination } from "@/hooks";
+import { usePagination, useResize } from "@/hooks";
 import useDelayMount from "@/hooks/useDelayMount";
 import { ISliderData } from "@/types/interfaces";
 import { Card } from "../..";
 import PaginationNavigation from "../paginationNavigation";
 import s from "./styles.module.scss";
+import { useEffect } from "react";
+import { documentSizeEnum } from "@/types/enum";
 
 const PaginationContent = () => {
   const { modalData, isOpen, setModalData } = useDelayMount();
-  const { data, pageNumber, pageCount, setPageNumber } = usePagination();
+  const { size } = useResize();
+  const { data, pageNumber, pageCount, setPageNumber, setPageData } =
+    usePagination();
+  const { innerWidth: width } = window;
+
+  useEffect(() => {
+    setPageNumber(0);
+    if (width >= documentSizeEnum.TABLET) {
+      setPageData({ cardsPerPage: 8, pageCount: 3 });
+    } else if (
+      width > documentSizeEnum.MOBILE &&
+      width < documentSizeEnum.TABLET
+    ) {
+      setPageData({ cardsPerPage: 6, pageCount: 4 });
+    } else {
+      setPageData({ cardsPerPage: 3, pageCount: 8 });
+    }
+  }, [size]);
 
   return (
     <>

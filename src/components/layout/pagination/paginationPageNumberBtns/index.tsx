@@ -1,5 +1,7 @@
 import { PaginationNavigationBtn } from "@/components/UI";
-import { Fragment, FC, Dispatch, SetStateAction } from "react";
+import { useResize } from "@/hooks";
+import { documentSizeEnum } from "@/types/enum";
+import { Dispatch, FC, Fragment, SetStateAction } from "react";
 
 interface IProps {
   pageCount: number;
@@ -12,17 +14,25 @@ const PaginationPageNumberBtns: FC<IProps> = ({
   pageNumber,
   setPageNumber,
 }) => {
+  const { size } = useResize();
+
+  const isMobile = size === documentSizeEnum.MOBILE;
+
   return (
     <>
-      {Array.from({ length: pageCount }).map((_, index) => (
-        <Fragment key={index}>
-          <PaginationNavigationBtn
-            title={index + 1}
-            isSelected={pageNumber === index}
-            callback={() => setPageNumber(index)}
-          />
-        </Fragment>
-      ))}
+      {isMobile ? (
+        <PaginationNavigationBtn title={pageNumber + 1} isSelected={true} />
+      ) : (
+        Array.from({ length: pageCount }).map((_, index) => (
+          <Fragment key={index}>
+            <PaginationNavigationBtn
+              title={index + 1}
+              isSelected={pageNumber === index}
+              callback={() => setPageNumber(index)}
+            />
+          </Fragment>
+        ))
+      )}
     </>
   );
 };

@@ -5,7 +5,7 @@ import {
   singleArrowRight,
 } from "@/assets/pagination";
 import { PaginationNavigationBtn } from "@/components/UI";
-import { paginationDirection } from "@/types/enum";
+import { paginationDirectionEnum } from "@/types/enum";
 import { Dispatch, FC, SetStateAction, memo } from "react";
 import PaginationPageNumberBtns from "../paginationPageNumberBtns";
 import s from "./styles.module.scss";
@@ -21,18 +21,18 @@ const PaginationNavigation: FC<IProps> = memo(
     const isDisableLast = pageCount - 1 === pageNumber;
     const isDisableFirst = pageNumber === 0;
 
-    const handlePageNumber = (value: paginationDirection) => {
+    const handlePageNumber = (value: paginationDirectionEnum) => {
       switch (value) {
-        case paginationDirection.PLUS:
+        case paginationDirectionEnum.PLUS:
           setPageNumber((prev) => ++prev);
           break;
-        case paginationDirection.MINUS:
+        case paginationDirectionEnum.MINUS:
           setPageNumber((prev) => --prev);
           break;
-        case paginationDirection.START:
+        case paginationDirectionEnum.START:
           setPageNumber(0);
           break;
-        case paginationDirection.END:
+        case paginationDirectionEnum.END:
           setPageNumber(pageCount - 1);
           break;
 
@@ -46,12 +46,12 @@ const PaginationNavigation: FC<IProps> = memo(
         <PaginationNavigationBtn
           title={doubleArrowLeft}
           disable={isDisableFirst}
-          callback={() => handlePageNumber(paginationDirection.START)}
+          callback={() => handlePageNumber(paginationDirectionEnum.START)}
         />
         <PaginationNavigationBtn
           title={singleArrowLeft}
           disable={isDisableFirst}
-          callback={() => handlePageNumber(paginationDirection.MINUS)}
+          callback={() => handlePageNumber(paginationDirectionEnum.MINUS)}
         />
 
         <PaginationPageNumberBtns
@@ -63,12 +63,12 @@ const PaginationNavigation: FC<IProps> = memo(
         <PaginationNavigationBtn
           title={singleArrowRight}
           disable={isDisableLast}
-          callback={() => handlePageNumber(paginationDirection.PLUS)}
+          callback={() => handlePageNumber(paginationDirectionEnum.PLUS)}
         />
         <PaginationNavigationBtn
           title={doubleArrowRight}
           disable={isDisableLast}
-          callback={() => handlePageNumber(paginationDirection.END)}
+          callback={() => handlePageNumber(paginationDirectionEnum.END)}
         />
       </div>
     );

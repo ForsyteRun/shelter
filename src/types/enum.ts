@@ -35,9 +35,15 @@ export const enum helpEnum {
   SLEEPING = "Sleeping areas",
 }
 
-export const enum paginationDirection {
+export const enum paginationDirectionEnum {
   PLUS = "plus",
   MINUS = "minus",
   START = "start",
   END = "end",
+}
+
+export const enum documentSizeEnum {
+  DESKTOP = 1280,
+  TABLET = 890,
+  MOBILE = 598,
 }

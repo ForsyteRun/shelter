@@ -1,26 +1,38 @@
 import { sliderData } from "@/db/slider";
 import { ISliderData } from "@/types/interfaces";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
+interface IPageData {
+  pageCount: number;
+  cardsPerPage: number;
+}
 
 const usePagination = () => {
   const [data, setData] = useState<ISliderData[][] | null>(null);
   const [pageNumber, setPageNumber] = useState(0);
-  const [pageCount, setPageCount] = useState(0);
 
-  const handlePaginationData = useCallback(() => {
-    const modifyData = Array.from({ length: 3 }, () => [...sliderData]).map(
-      (shuffledData) => shuffledData.sort(() => Math.random() - 0.5)
+  const [pageData, setPageData] = useState<IPageData>({
+    cardsPerPage: 8,
+    pageCount: 3,
+  });
+
+  const { pageCount, cardsPerPage } = pageData;
+
+  const handlePaginationData = () => {
+    const modifyData = Array.from({ length: pageCount }, () => [
+      ...sliderData,
+    ]).map((shuffledData) =>
+      shuffledData.sort(() => Math.random() - 0.5).slice(0, cardsPerPage)
     );
 
     setData(modifyData);
-    setPageCount(modifyData.length);
-  }, [sliderData]);
+  };
 
   useEffect(() => {
     handlePaginationData();
-  }, [sliderData]);
+  }, [pageData]);
 
-  return { data, pageNumber, pageCount, setPageNumber };
+  return { data, pageNumber, pageCount, setPageNumber, setPageData };
 };
 
 export default usePagination;
