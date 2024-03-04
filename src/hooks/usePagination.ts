@@ -21,6 +21,7 @@ const usePagination = () => {
       shuffledData.sort(() => Math.random() - 0.5).slice(0, cardsPerPage)
     );
 
+    setPageNumber(0);
     setData(modifyData);
   };
 

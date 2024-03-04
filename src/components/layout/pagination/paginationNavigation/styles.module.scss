@@ -3,5 +3,6 @@
   width: 48rem;
   @include _598 {
     width: initial;
+    gap: 1rem;
   }
 }
