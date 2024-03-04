@@ -1,20 +1,19 @@
 import { vector } from "@/assets/icons";
+import { useScrollbarWidth } from "@/hooks";
 import { ISliderData } from "@/types/interfaces";
+import { disableBody } from "@/utils/disableBody";
+import cn from "classnames";
 import {
   Dispatch,
   FC,
+  MouseEvent,
   SetStateAction,
+  useCallback,
   useEffect,
   useRef,
-  MouseEvent,
-  useCallback,
 } from "react";
 import ModalContent from "./modalContent";
 import s from "./styles.module.scss";
-import { disableBody } from "@/utils/disableBody";
-import cn from "classnames";
-import { useResize } from "@/hooks";
-import { documentSizeEnum } from "@/types/enum";
 
 interface Props {
   data: ISliderData;
@@ -24,18 +23,19 @@ interface Props {
 
 const Modal: FC<Props> = ({ data, isOpen, callback }) => {
   const ref = useRef(null);
-  const { size } = useResize();
 
+  const scrollbarWidth = useScrollbarWidth();
   const { path } = data;
 
   useEffect(() => {
-    if (size && size === documentSizeEnum.DESKTOP) {
-      document.body.style.paddingRight = "1.7rem";
-    }
+    document.body.style.paddingRight = `${scrollbarWidth}` + "px";
+    document.body.style.paddingBottom = `${scrollbarWidth}` + "px";
+
     return () => {
       document.body.style.paddingRight = "0";
+      document.body.style.paddingBottom = "0";
     };
-  }, [size]);
+  }, []);
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
