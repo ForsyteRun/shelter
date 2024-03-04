@@ -1,8 +1,8 @@
 import s from "./styles.module.scss";
 import cn from "classnames";
 import puppy from "@/assets/footer-puppy.png";
-import { FooterInfo } from "@/components/layout";
 import { footerInfo } from "@/db/footer";
+import FooterInfo from "./footerInfo";
 
 const Footer = () => {
   return (
