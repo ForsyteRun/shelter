@@ -83,7 +83,8 @@
   margin-top: -1.2rem;
   padding: 0 1.3rem;
   @include _890 {
-    width: 92%;
+    width: 70%;
+    min-width: 28.5rem;
   }
   @include _375 {
     width: 100%;
@@ -92,12 +93,6 @@
     font-size: 2.25rem;
     @include _1280 {
       font-size: max(1.75rem, 1.75vw);
-    }
-    @include _890 {
-      font-size: 2.25rem;
-    }
-    @include _730 {
-      font-size: max(1.5rem, 2.9vw);
     }
     @include _375 {
       font-size: 1.72rem;
