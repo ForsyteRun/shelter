@@ -6,17 +6,12 @@ import {
 } from "@/assets/pagination";
 import { PaginationNavigationBtn } from "@/components/UI";
 import { paginationDirectionEnum } from "@/types/enum";
-import { Dispatch, FC, SetStateAction, memo } from "react";
+import { IPaginationProps } from "@/types/interfaces";
+import { FC, memo } from "react";
 import PaginationPageNumberBtns from "../paginationPageNumberBtns";
 import s from "./styles.module.scss";
 
-interface IProps {
-  pageCount: number;
-  pageNumber: number;
-  setPageNumber: Dispatch<SetStateAction<number>>;
-}
-
-const PaginationNavigation: FC<IProps> = memo(
+const PaginationNavigation: FC<IPaginationProps> = memo(
   ({ pageCount, pageNumber, setPageNumber }) => {
     const isDisableLast = pageCount - 1 === pageNumber;
     const isDisableFirst = pageNumber === 0;

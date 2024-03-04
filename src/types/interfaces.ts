@@ -1,4 +1,5 @@
 import { helpEnum, pathEnum, sliderTitleEnum } from "./enum";
+import { Dispatch, SetStateAction } from "react";
 
 export interface IHeaderNavLink {
   title: string;
@@ -30,4 +31,10 @@ export interface IFooterInfo {
 export interface IFooterInfoContent {
   logo: string;
   content: string;
+}
+
+export interface IPaginationProps {
+  pageCount: number;
+  pageNumber: number;
+  setPageNumber: Dispatch<SetStateAction<number>>;
 }

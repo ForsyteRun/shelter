@@ -1,15 +1,10 @@
 import { PaginationNavigationBtn } from "@/components/UI";
 import { useResize } from "@/hooks";
 import { documentSizeEnum } from "@/types/enum";
-import { Dispatch, FC, Fragment, SetStateAction } from "react";
+import { IPaginationProps } from "@/types/interfaces";
+import { FC, Fragment } from "react";
 
-interface IProps {
-  pageCount: number;
-  pageNumber: number;
-  setPageNumber: Dispatch<SetStateAction<number>>;
-}
-
-const PaginationPageNumberBtns: FC<IProps> = ({
+const PaginationPageNumberBtns: FC<IPaginationProps> = ({
   pageCount,
   pageNumber,
   setPageNumber,

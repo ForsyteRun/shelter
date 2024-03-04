@@ -1,11 +1,7 @@
 import { sliderData } from "@/db/slider";
 import { ISliderData } from "@/types/interfaces";
 import { useEffect, useState } from "react";
-
-interface IPageData {
-  pageCount: number;
-  cardsPerPage: number;
-}
+import { IPageData } from "./types";
 
 const usePagination = () => {
   const [data, setData] = useState<ISliderData[][] | null>(null);
