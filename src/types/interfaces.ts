@@ -1,10 +1,11 @@
-import { helpEnum, pathEnum, sliderTitleEnum } from "./enum";
+import { helpEnum, navLinkPathEnum, sliderTitleEnum } from "./enum";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IHeaderNavLink {
   title: string;
-  path: pathEnum;
+  path: navLinkPathEnum;
 }
+
 export interface ISliderData {
   title: sliderTitleEnum;
   path: string;

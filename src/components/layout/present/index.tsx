@@ -3,7 +3,7 @@ import s from "./styles.module.scss";
 import puppy from "@/assets/start-screen-puppy.png";
 import cn from "classnames";
 import { Link } from "react-router-dom";
-import { pathEnum } from "@/types/enum";
+import { navLinkPathEnum } from "@/types/enum";
 
 const Present = () => {
   return (
@@ -18,7 +18,7 @@ const Present = () => {
             extremely wide and open heart. He or she will love you more than
             anybody else in the world, you will see!
           </p>
-          <Link to={pathEnum.FRIIENDS}>
+          <Link to={navLinkPathEnum.FRIENDS}>
             <Button title="Make a friend" styles={cn("button", s.button)} />
           </Link>
         </div>

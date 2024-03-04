@@ -1,10 +1,17 @@
-export const enum pathEnum {
+export const enum navLinkPathEnum {
   ABOUT = "#about",
   PETS = "#pets",
   HELP = "#help",
   CONTACTS = "#contacts",
-  FRIIENDS = "friends",
+  FRIENDS = "friends",
   MAIN = "main",
+}
+
+export const enum navLinksTitleEnum {
+  ABOUT = "About the shelter",
+  PETS = "Our pets",
+  HELP = "Help the shelter",
+  CONTACTS = "Contacts",
 }
 
 export const enum sliderTitleEnum {

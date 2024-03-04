@@ -1,8 +1,9 @@
-import { headerNavLinks } from "@/db/navLinks";
 import cn from "classnames";
 import { FC, MouseEvent } from "react";
-import s from "./styles.module.scss";
 import { useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import s from "./styles.module.scss";
+import createNavLink from "@/utils/createNavLinks";
 
 interface IProps {
   open: boolean;
@@ -12,23 +13,23 @@ interface IProps {
 const Nav: FC<IProps> = ({ open, handleClick }) => {
   const location = useLocation();
 
-  const isRootLocation = location.pathname === "/";
+  const isMainPage = location.pathname === "/";
 
   return (
     <>
       <div className={cn(s.container, { [s.active]: open })}>
-        {headerNavLinks.map(({ title, path }) => (
-          <a
-            href={path}
+        {createNavLink().map(({ title, path }) => (
+          <HashLink
+            to={isMainPage ? path : `/${path}`}
             key={title}
             onClick={(e) => handleClick(e)}
             className={cn({
-              lightColor: isRootLocation,
-              [s.darkColor]: !isRootLocation,
+              lightColor: isMainPage,
+              [s.darkColor]: !isMainPage,
             })}
           >
             {title}
-          </a>
+          </HashLink>
         ))}
       </div>
     </>
