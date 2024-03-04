@@ -13,6 +13,8 @@ import ModalContent from "./modalContent";
 import s from "./styles.module.scss";
 import { disableBody } from "@/utils/disableBody";
 import cn from "classnames";
+import { useResize } from "@/hooks";
+import { documentSizeEnum } from "@/types/enum";
 
 interface Props {
   data: ISliderData;
@@ -22,15 +24,18 @@ interface Props {
 
 const Modal: FC<Props> = ({ data, isOpen, callback }) => {
   const ref = useRef(null);
+  const { size } = useResize();
 
   const { path } = data;
 
   useEffect(() => {
-    document.body.style.paddingRight = "1.7rem";
+    if (size && size === documentSizeEnum.DESKTOP) {
+      document.body.style.paddingRight = "1.7rem";
+    }
     return () => {
       document.body.style.paddingRight = "0";
     };
-  }, []);
+  }, [size]);
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {

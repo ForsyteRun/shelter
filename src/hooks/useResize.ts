@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { IPageData } from "./types";
 
 const useResize = () => {
-  const [size, setSize] = useState<documentSizeEnum>(documentSizeEnum.DESKTOP);
+  const [size, setSize] = useState<documentSizeEnum | null>(null);
   const [sizeData, setSizeData] = useState<IPageData>({
     cardsPerPage: 8,
     pageCount: 3,
