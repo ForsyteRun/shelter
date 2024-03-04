@@ -42,9 +42,6 @@
         opacity: 1;
       }
     }
-    &:active {
-      color: $color-light-xl;
-    }
     @include _730 {
       font-size: 3.2rem;
     }
@@ -53,6 +50,9 @@
 
 .darkColor {
   color: $color-dark-l;
+  &:active {
+    color: $color-dark-l;
+  }
   @include _730 {
     color: $color-light-xl;
   }
